@@ -14,4 +14,6 @@ version = MavenVersion
 dependencies {
     commonMainApi(project(":nutrition:nutrition"))
     commonMainImplementation(libs.kotlin.test)
+    commonMainImplementation(libs.measure)
+    commonMainImplementation(libs.measure.test)
 }
