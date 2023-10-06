@@ -28,11 +28,11 @@ class MavenPublicationConvention : Plugin<Project> {
                     extra["ossrhUsername"].toString(),
                     extra["ossrhPassword"].toString(),
                 )
-                configureMaven { javadocJar.get() }
-                extensions.configure<SigningExtension> {
-                    useGpgCmd()
-                    sign(publications)
-                }
+                configureMaven(jarTask = javadocJar)
+            }
+            extensions.configure<SigningExtension> {
+                useGpgCmd()
+                sign(extensions.getByType<PublishingExtension>().publications)
             }
         }
     }

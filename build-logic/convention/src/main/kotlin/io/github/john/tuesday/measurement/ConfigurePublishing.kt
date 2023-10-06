@@ -5,6 +5,7 @@ import org.gradle.api.publish.PublishingExtension
 import org.gradle.api.publish.maven.MavenPomDeveloperSpec
 import org.gradle.api.publish.maven.MavenPomLicenseSpec
 import org.gradle.api.publish.maven.MavenPublication
+import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.bundling.Jar
 import org.gradle.kotlin.dsl.extra
 import org.gradle.kotlin.dsl.withType
@@ -12,8 +13,7 @@ import java.util.*
 
 
 const val MavenGroupId = "io.github.john-tuesday"
-const val MavenVersion = "1.0-SNAPSHOT"
-internal const val GitUrl = "https://github.com/John-Tuesday/nutrition"
+const val MavenVersion = "0.1.0"
 
 internal data class RepositoryInfo(
     val name: String,
@@ -36,7 +36,7 @@ internal fun Project.configureSecrets() {
     extra["ossrhUsername"] = null
     extra["ossrhPassword"] = null
 
-    val propsFile = this.rootProject.file("local.properties")
+    val propsFile = this.rootProject.layout.projectDirectory.file("local.properties").asFile
     if (propsFile.exists()) {
         propsFile.reader().use {
             Properties().apply {
@@ -65,11 +65,11 @@ internal fun PublishingExtension.configureRepositories(
 }
 
 internal fun PublishingExtension.configureMaven(
+    jarTask: TaskProvider<Jar>,
     repositoryInfo: RepositoryInfo = NutritionRepo,
-    getJar: () -> Jar,
 ) {
     publications.withType<MavenPublication> {
-        artifact(getJar())
+        artifact(jarTask)
 
         pom {
             name.set(repositoryInfo.name)
