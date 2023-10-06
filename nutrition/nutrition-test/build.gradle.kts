@@ -11,9 +11,14 @@ plugins {
 group = MavenGroupId
 version = MavenVersion
 
-dependencies {
-    commonMainApi(project(":nutrition:nutrition"))
-    commonMainImplementation(libs.kotlin.test)
-    commonMainImplementation(libs.measure)
-    commonMainImplementation(libs.measure.test)
+kotlin {
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation(project(":nutrition:nutrition"))
+                implementation(libs.kotlin.test)
+                implementation(libs.measure)
+            }
+        }
+    }
 }

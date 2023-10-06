@@ -11,10 +11,28 @@ plugins {
 group = MavenGroupId
 version = MavenVersion
 
-dependencies {
-    commonMainImplementation(libs.measure)
-    commonTestImplementation(libs.kotlin.test)
-    commonTestImplementation(libs.measure.test)
-    jvmTestImplementation(libs.junit.jupiter)
-    jvmTestRuntimeOnly(libs.junit.platform.launcher)
+kotlin {
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation(libs.measure)
+            }
+        }
+
+        val commonTest by getting {
+            dependencies {
+                dependsOn(commonMain)
+//                implementation(project(":nutrition:nutrition-test"))
+                implementation(libs.kotlin.test)
+            }
+        }
+
+        val jvmTest by getting {
+            dependencies {
+                implementation(libs.junit.jupiter)
+                runtimeOnly(libs.junit.platform.launcher)
+            }
+        }
+
+    }
 }
