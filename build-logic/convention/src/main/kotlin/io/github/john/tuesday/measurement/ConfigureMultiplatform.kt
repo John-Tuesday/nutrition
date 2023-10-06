@@ -46,7 +46,7 @@ internal fun KotlinMultiplatformExtension.configureJvm() {
 internal fun KotlinMultiplatformExtension.configureNative() {
     linuxArm64()
     linuxX64()
-    macosX64()
-    macosArm64()
     mingwX64()
+//    macosX64()
+//    macosArm64()
 }
