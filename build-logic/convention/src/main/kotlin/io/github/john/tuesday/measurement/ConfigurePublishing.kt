@@ -61,6 +61,14 @@ internal fun PublishingExtension.configureRepositories(
                 password = ossrhPassword
             }
         }
+        maven {
+            name = "sonatypeSnapshots"
+            setUrl("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+            credentials {
+                username = ossrhUsername
+                password = ossrhPassword
+            }
+        }
     }
 }
 
