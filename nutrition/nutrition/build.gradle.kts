@@ -22,7 +22,6 @@ kotlin {
         val commonTest by getting {
             dependencies {
                 dependsOn(commonMain)
-//                implementation(project(":nutrition:nutrition-test"))
                 implementation(libs.kotlin.test)
             }
         }
