@@ -5,7 +5,7 @@ plugins {
 group = "io.github.john-tuesday.build-logic"
 
 kotlin {
-    sourceSets.all {
+    sourceSets.configureEach {
         languageSettings.apply {
             languageVersion = "1.9"
             apiVersion = "1.9"

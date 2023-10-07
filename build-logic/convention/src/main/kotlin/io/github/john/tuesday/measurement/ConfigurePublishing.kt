@@ -68,7 +68,7 @@ internal fun PublishingExtension.configureMaven(
     jarTask: TaskProvider<Jar>,
     repositoryInfo: RepositoryInfo = NutritionRepo,
 ) {
-    publications.withType<MavenPublication> {
+    publications.withType<MavenPublication>().configureEach {
         artifact(jarTask)
 
         pom {
