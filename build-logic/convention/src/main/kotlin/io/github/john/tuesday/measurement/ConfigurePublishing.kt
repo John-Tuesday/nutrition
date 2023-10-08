@@ -7,13 +7,14 @@ import org.gradle.api.publish.maven.MavenPomLicenseSpec
 import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.bundling.Jar
+import org.gradle.kotlin.dsl.assign
 import org.gradle.kotlin.dsl.extra
 import org.gradle.kotlin.dsl.withType
 import java.util.*
 
 
 const val MavenGroupId = "io.github.john-tuesday"
-const val MavenVersion = "0.1.1"
+const val MavenVersion = "0.1.2"
 
 internal data class RepositoryInfo(
     val name: String,
@@ -87,9 +88,9 @@ internal fun PublishingExtension.configureMaven(
         withBuildIdentifier()
 
         pom {
-            name.set(repositoryInfo.name)
-            description.set(repositoryInfo.description)
-            url.set(repositoryInfo.homeUrl)
+            name = repositoryInfo.name
+            description = repositoryInfo.description
+            url = repositoryInfo.homeUrl
 
             licenses {
                 mit()
@@ -98,7 +99,7 @@ internal fun PublishingExtension.configureMaven(
                 johnTuesday()
             }
             scm {
-                url.set(repositoryInfo.repoUrl)
+                url = repositoryInfo.repoUrl
             }
         }
     }
@@ -106,16 +107,16 @@ internal fun PublishingExtension.configureMaven(
 
 internal fun MavenPomLicenseSpec.mit() {
     license {
-        name.set("MIT")
-        url.set("https://opensource.org/licenses/MIT")
+        name = "MIT"
+        url = "https://opensource.org/licenses/MIT"
     }
 }
 
 internal fun MavenPomDeveloperSpec.johnTuesday() {
     developer {
-        id.set("John-Tuesday")
-        name.set("John Tuesday Picot")
-        email.set("calamarfederal.messyink@gmail.com")
+        id = "John-Tuesday"
+        name = "John Tuesday Picot"
+        email = "calamarfederal.messyink@gmail.com"
     }
 }
 

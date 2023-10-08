@@ -1,16 +1,18 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
+
 plugins {
     `kotlin-dsl`
 }
 
 group = "io.github.john-tuesday.build-logic"
 
-kotlin {
-    sourceSets.configureEach {
-        languageSettings.apply {
-            languageVersion = "1.9"
-            apiVersion = "1.9"
-            progressiveMode = true
-        }
+tasks.withType<KotlinJvmCompile>().configureEach {
+    compilerOptions {
+        apiVersion = KotlinVersion.KOTLIN_1_9
+        languageVersion = KotlinVersion.KOTLIN_1_9
+        progressiveMode = true
     }
 }
 

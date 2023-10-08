@@ -21,7 +21,7 @@ class MavenPublicationConvention : Plugin<Project> {
             configureSecrets()
 
             val javadocJar by tasks.registering(Jar::class) {
-                archiveClassifier.set("javadoc")
+                archiveClassifier = "javadoc"
             }
 
             extensions.configure<PublishingExtension> {
