@@ -21,7 +21,6 @@ kotlin {
 
         val commonTest by getting {
             dependencies {
-                dependsOn(commonMain)
                 implementation(libs.kotlin.test)
             }
         }

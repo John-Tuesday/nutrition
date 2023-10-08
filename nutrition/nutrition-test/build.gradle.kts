@@ -4,6 +4,7 @@ import io.github.john.tuesday.measurement.MavenVersion
 plugins {
     id("measure.kotlin.library")
     id("measure.kotlin.library.jvm")
+//    id("measure.kotlin.library.android")
     id("measure.kotlin.library.native")
     id("measure.maven.publication")
 }
