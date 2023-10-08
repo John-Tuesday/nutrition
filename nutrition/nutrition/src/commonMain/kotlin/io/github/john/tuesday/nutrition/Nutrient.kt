@@ -2,40 +2,58 @@ package io.github.john.tuesday.nutrition
 
 import org.calamarfederal.physical.measurement.*
 
-enum class NutrientType {
+enum class NutrientCategory {
     Protein,
+    Carbohydrate,
+    Fat,
+    Mineral,
+    Vitamin,
+}
 
-    TotalCarbohydrate,
-    Fiber,
-    Sugar,
-    SugarAlcohol,
-    Starch,
+enum class NutrientType(val category: NutrientCategory) {
+    Protein(NutrientCategory.Protein),
 
-    TotalFat,
-    MonounsaturatedFat,
-    PolyunsaturatedFat,
-    Omega3,
-    Omega6,
-    SaturatedFat,
-    TransFat,
-    Cholesterol,
+    TotalCarbohydrate(NutrientCategory.Carbohydrate),
+    Fiber(NutrientCategory.Carbohydrate),
+    Sugar(NutrientCategory.Carbohydrate),
+    SugarAlcohol(NutrientCategory.Carbohydrate),
+    Starch(NutrientCategory.Carbohydrate),
 
-    Calcium,
-    Chloride,
-    Iron,
-    Magnesium,
-    Phosphorous,
-    Potassium,
-    Sodium,
+    TotalFat(NutrientCategory.Fat),
+    MonounsaturatedFat(NutrientCategory.Fat),
+    PolyunsaturatedFat(NutrientCategory.Fat),
+    Omega3(NutrientCategory.Fat),
+    Omega6(NutrientCategory.Fat),
+    SaturatedFat(NutrientCategory.Fat),
+    TransFat(NutrientCategory.Fat),
+    Cholesterol(NutrientCategory.Fat),
 
-    VitaminA,
-    VitaminC,
+    Calcium(NutrientCategory.Mineral),
+    Chloride(NutrientCategory.Mineral),
+    Iron(NutrientCategory.Mineral),
+    Magnesium(NutrientCategory.Mineral),
+    Phosphorous(NutrientCategory.Mineral),
+    Potassium(NutrientCategory.Mineral),
+    Sodium(NutrientCategory.Mineral),
+
+    VitaminA(NutrientCategory.Vitamin),
+    VitaminC(NutrientCategory.Vitamin),
     ;
 }
+
+fun NutrientType.allCarbohydrates(): List<NutrientType> =
+    NutrientType.entries.filter { it.category == NutrientCategory.Carbohydrate }
+
+fun NutrientType.allFats(): List<NutrientType> = NutrientType.entries.filter { it.category == NutrientCategory.Fat }
+fun NutrientType.allMinerals(): List<NutrientType> = NutrientType.entries.filter { it.category == NutrientCategory.Mineral }
+fun NutrientType.allVitamins(): List<NutrientType> = NutrientType.entries.filter { it.category == NutrientCategory.Vitamin }
+
 
 sealed interface Nutrient {
     val nutrientType: NutrientType
     val mass: Mass
+
+    companion object
 }
 
 internal data class NutrientImplementation(
@@ -43,8 +61,12 @@ internal data class NutrientImplementation(
     override val mass: Mass,
 ) : Nutrient
 
-fun makeNutrient(nutrientType: NutrientType, mass: Mass): Nutrient = NutrientImplementation(nutrientType = nutrientType, mass = mass)
+fun makeNutrient(nutrientType: NutrientType, mass: Mass): Nutrient =
+    NutrientImplementation(nutrientType = nutrientType, mass = mass)
+
 operator fun NutrientType.invoke(mass: Mass): Nutrient = makeNutrient(nutrientType = this, mass = mass)
+operator fun Nutrient.Companion.invoke(nutrientType: NutrientType, mass: Mass): Nutrient = makeNutrient(nutrientType = nutrientType, mass = mass)
+
 
 val FoodNutrition.protein: Mass? get() = get(NutrientType.Protein)
 val FoodNutrition.totalCarbohydrate: Mass? get() = get(NutrientType.TotalCarbohydrate)
