@@ -13,7 +13,7 @@ import java.util.*
 
 
 const val MavenGroupId = "io.github.john-tuesday"
-const val MavenVersion = "0.1.0"
+const val MavenVersion = "0.1.1"
 
 internal data class RepositoryInfo(
     val name: String,
@@ -60,6 +60,9 @@ internal fun PublishingExtension.configureRepositories(
                 username = ossrhUsername
                 password = ossrhPassword
             }
+            metadataSources {
+                gradleMetadata()
+            }
         }
         maven {
             name = "sonatypeSnapshots"
@@ -67,6 +70,9 @@ internal fun PublishingExtension.configureRepositories(
             credentials {
                 username = ossrhUsername
                 password = ossrhPassword
+            }
+            metadataSources {
+                gradleMetadata()
             }
         }
     }
@@ -78,6 +84,7 @@ internal fun PublishingExtension.configureMaven(
 ) {
     publications.withType<MavenPublication>().configureEach {
         artifact(jarTask)
+        withBuildIdentifier()
 
         pom {
             name.set(repositoryInfo.name)

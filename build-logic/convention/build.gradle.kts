@@ -17,6 +17,8 @@ kotlin {
 dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.kotlin.multiplatform.gradlePlugin)
+    compileOnly(libs.kotlin.android.gradlePlugin)
+    compileOnly(libs.android.gradlePlugin)
 }
 
 gradlePlugin {
@@ -28,6 +30,10 @@ gradlePlugin {
         register("kotlinLibraryJvm") {
             id = "measure.kotlin.library.jvm"
             implementationClass = "KotlinLibraryJvmConvention"
+        }
+        register("kotlinLibraryAndroid") {
+            id = "measure.kotlin.library.android"
+            implementationClass = "KotlinLibraryAndroidConvention"
         }
         register("kotlinLibraryNative") {
             id = "measure.kotlin.library.native"

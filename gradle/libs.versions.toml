@@ -1,4 +1,5 @@
 [versions]
+android = "8.1.2"
 junit = "5.10.0"
 junitPlatform = "1.10.0"
 kotlin = "1.9.10"
@@ -12,8 +13,10 @@ measure = { module = "io.github.john-tuesday:measure", version.ref = "measure" }
 measure-test = { module = "io.github.john-tuesday:measure-test", version.ref = "measure" }
 
 # Build-logic
+android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "android" }
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-multiplatform-gradlePlugin = { module = "org.jetbrains.kotlin.multiplatform:org.jetbrains.kotlin.multiplatform.gradle.plugin", version.ref = "kotlin" }
+kotlin-android-gradlePlugin = { module = "org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin", version.ref = "kotlin" }
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

@@ -40,6 +40,11 @@ internal fun KotlinMultiplatformExtension.configureJvm() {
     }
 }
 
+internal fun KotlinMultiplatformExtension.configureAndroid() {
+    androidTarget {
+        publishLibraryVariants = listOf("release", "debug")
+    }
+}
 /**
  * Configure the native target
  */
