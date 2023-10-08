@@ -19,14 +19,14 @@ sealed interface FoodNutrition {
     companion object {
         operator fun invoke(
             portion: Portion,
-            foodEnergy: Energy,
-            nutritionMap: NutritionMap,
+            foodEnergy: Energy = 0.kilocalories,
+            nutritionMap: NutritionMap = mapOf(),
         ): FoodNutrition = FoodNutritionMapImpl(portion = portion, foodEnergy = foodEnergy, nutrients = nutritionMap)
 
         operator fun invoke(
             portion: Portion,
-            foodEnergy: Energy,
-            nutrients: Iterable<Nutrient>,
+            foodEnergy: Energy = 0.kilocalories,
+            nutrients: Iterable<Nutrient> = emptyList(),
         ): FoodNutrition = FoodNutrition(
             portion = portion,
             foodEnergy = foodEnergy,
