@@ -2,10 +2,9 @@ package io.github.john.tuesday.nutrition
 
 import org.calamarfederal.physical.measurement.*
 
-val Map.Entry<NutrientType, Mass>.nutrientType: NutrientType get() = key
-val Map.Entry<NutrientType, Mass>.mass: Mass get() = value
-
 typealias NutritionMap = Map<NutrientType, Mass>
+internal val Map.Entry<NutrientType, Mass>.nutrientType: NutrientType get() = key
+internal val Map.Entry<NutrientType, Mass>.mass: Mass get() = value
 
 /**
  * Nutritional facts about something
