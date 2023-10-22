@@ -14,7 +14,7 @@ import java.util.*
 
 
 const val MavenGroupId = "io.github.john-tuesday"
-const val MavenVersion = "0.1.2"
+const val MavenVersion = "0.1.4"
 
 internal data class RepositoryInfo(
     val name: String,
