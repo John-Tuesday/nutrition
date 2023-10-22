@@ -39,15 +39,33 @@ enum class NutrientType(val category: NutrientCategory) {
     VitaminA(NutrientCategory.Vitamin),
     VitaminC(NutrientCategory.Vitamin),
     ;
+
+    companion object
 }
 
-fun NutrientType.allCarbohydrates(): List<NutrientType> =
+/**
+ * All [NutrientType] with [NutrientType.category] equal to [NutrientCategory.Carbohydrate]
+ */
+fun NutrientType.Companion.allCarbohydrates(): List<NutrientType> =
     NutrientType.entries.filter { it.category == NutrientCategory.Carbohydrate }
 
-fun NutrientType.allFats(): List<NutrientType> = NutrientType.entries.filter { it.category == NutrientCategory.Fat }
-fun NutrientType.allMinerals(): List<NutrientType> = NutrientType.entries.filter { it.category == NutrientCategory.Mineral }
-fun NutrientType.allVitamins(): List<NutrientType> = NutrientType.entries.filter { it.category == NutrientCategory.Vitamin }
+/**
+ * All [NutrientType] with [NutrientType.category] equal to [NutrientCategory.Fat]
+ */
+fun NutrientType.Companion.allFats(): List<NutrientType> =
+    NutrientType.entries.filter { it.category == NutrientCategory.Fat }
 
+/**
+ * All [NutrientType] with [NutrientType.category] equal to [NutrientCategory.Mineral]
+ */
+fun NutrientType.Companion.allMinerals(): List<NutrientType> =
+    NutrientType.entries.filter { it.category == NutrientCategory.Mineral }
+
+/**
+ * All [NutrientType] with [NutrientType.category] equal to [NutrientCategory.Vitamin]
+ */
+fun NutrientType.Companion.allVitamins(): List<NutrientType> =
+    NutrientType.entries.filter { it.category == NutrientCategory.Vitamin }
 
 sealed interface Nutrient {
     val nutrientType: NutrientType
