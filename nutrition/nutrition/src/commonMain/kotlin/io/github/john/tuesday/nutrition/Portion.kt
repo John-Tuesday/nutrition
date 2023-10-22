@@ -20,6 +20,15 @@ sealed interface Portion {
 }
 
 /**
+ * Fold `this` to a single value [T] by calling [onMassPortion] if `this` is [MassPortion]
+ * and [onVolumePortion] if `this` is [VolumePortion]
+ */
+inline fun <T> Portion.fold(onMassPortion: (Mass) -> T, onVolumePortion: (Volume) -> T): T = when (this) {
+    is MassPortion -> onMassPortion(mass)
+    is VolumePortion -> onVolumePortion(volume)
+}
+
+/**
  * Portion of food measured in [Mass]
  *
  * @see [Portion]
