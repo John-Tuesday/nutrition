@@ -22,15 +22,6 @@ sealed interface FoodNutrition {
             foodEnergy: Energy = 0.kilocalories,
             nutritionMap: NutritionMap = mapOf(),
         ): FoodNutrition = FoodNutritionMapImpl(portion = portion, foodEnergy = foodEnergy, nutrients = nutritionMap)
-
-        operator fun invoke(
-            portion: Portion,
-            foodEnergy: Energy = 0.kilocalories,
-            nutrients: Iterable<Nutrient> = emptyList(),
-        ): FoodNutrition = FoodNutrition(
-            portion = portion,
-            foodEnergy = foodEnergy,
-            nutritionMap = nutrients.associate { it.nutrientType to it.mass })
     }
 }
 
