@@ -30,6 +30,9 @@ internal data class FoodNutritionMapImpl(
     override val nutrients: NutritionMap,
 ) : FoodNutrition {}
 
+/**
+ * Mirrors copy() of a `data class`
+ */
 fun FoodNutrition.mutate(
     portion: Portion = this.portion,
     foodEnergy: Energy = this.foodEnergy,

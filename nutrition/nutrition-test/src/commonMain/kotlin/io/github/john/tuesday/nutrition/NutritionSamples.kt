@@ -4,6 +4,9 @@ import org.calamarfederal.physical.measurement.grams
 import org.calamarfederal.physical.measurement.kilocalories
 import org.calamarfederal.physical.measurement.milligrams
 
+/**
+ * [FoodNutrition] samples to be used in testing
+ */
 object NutritionSamples {
     val filledNutritionA get() = FoodNutrition(
     portion = Portion(100.grams),

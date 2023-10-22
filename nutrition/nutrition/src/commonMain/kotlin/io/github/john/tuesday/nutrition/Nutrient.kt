@@ -2,6 +2,9 @@ package io.github.john.tuesday.nutrition
 
 import org.calamarfederal.physical.measurement.*
 
+/**
+ * Macro category of [NutrientType]
+ */
 enum class NutrientCategory {
     Protein,
     Carbohydrate,
@@ -10,6 +13,9 @@ enum class NutrientCategory {
     Vitamin,
 }
 
+/**
+ * Nutrient type with a specified [category]
+ */
 enum class NutrientType(val category: NutrientCategory) {
     Protein(NutrientCategory.Protein),
 
@@ -67,6 +73,10 @@ fun NutrientType.Companion.allMinerals(): List<NutrientType> =
 fun NutrientType.Companion.allVitamins(): List<NutrientType> =
     NutrientType.entries.filter { it.category == NutrientCategory.Vitamin }
 
+
+/**
+ * Specific amount of [NutrientType] in [Mass]
+ */
 sealed interface Nutrient {
     val nutrientType: NutrientType
     val mass: Mass
@@ -83,7 +93,8 @@ fun makeNutrient(nutrientType: NutrientType, mass: Mass): Nutrient =
     NutrientImplementation(nutrientType = nutrientType, mass = mass)
 
 operator fun NutrientType.invoke(mass: Mass): Nutrient = makeNutrient(nutrientType = this, mass = mass)
-operator fun Nutrient.Companion.invoke(nutrientType: NutrientType, mass: Mass): Nutrient = makeNutrient(nutrientType = nutrientType, mass = mass)
+operator fun Nutrient.Companion.invoke(nutrientType: NutrientType, mass: Mass): Nutrient =
+    makeNutrient(nutrientType = nutrientType, mass = mass)
 
 
 val FoodNutrition.protein: Mass? get() = get(NutrientType.Protein)
