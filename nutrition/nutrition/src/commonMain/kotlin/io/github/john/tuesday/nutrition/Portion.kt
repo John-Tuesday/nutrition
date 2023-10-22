@@ -28,7 +28,7 @@ sealed class MassPortion(override val mass: Mass) : Portion {
     final override val volume = null
 
     companion object {
-        operator fun invoke(mass: Mass): MassPortion = MassPortionImpl(mass = mass)
+        operator fun invoke(mass: Mass = 0.grams): MassPortion = MassPortionImpl(mass = mass)
     }
 }
 
@@ -41,7 +41,7 @@ sealed class VolumePortion(override val volume: Volume) : Portion {
     final override val mass = null
 
     companion object {
-        operator fun invoke(volume: Volume): VolumePortion = VolumePortionImpl(volume = volume)
+        operator fun invoke(volume: Volume = 0.milliliters): VolumePortion = VolumePortionImpl(volume = volume)
     }
 }
 
