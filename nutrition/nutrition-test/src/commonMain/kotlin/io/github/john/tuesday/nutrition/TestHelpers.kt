@@ -1,6 +1,6 @@
 package io.github.john.tuesday.nutrition
 
-fun FoodNutrition.toPrettyString(): String = toString()
+public fun FoodNutrition.toPrettyString(): String = toString()
     .replaceFirst("(", "(\n")
     .replace("{", "{\n")
     .replace(",", ",\n")
@@ -8,6 +8,6 @@ fun FoodNutrition.toPrettyString(): String = toString()
     .prependIndent("    ")
     .trimStart()
 
-fun prettyPrint(foodNutrition: FoodNutrition) {
+public fun prettyPrint(foodNutrition: FoodNutrition) {
     println(foodNutrition.toPrettyString())
 }

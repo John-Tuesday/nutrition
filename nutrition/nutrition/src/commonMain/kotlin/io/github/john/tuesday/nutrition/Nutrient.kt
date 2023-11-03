@@ -5,7 +5,7 @@ import org.calamarfederal.physical.measurement.*
 /**
  * Macro category of [NutrientType]
  */
-enum class NutrientCategory {
+public enum class NutrientCategory {
     Protein,
     Carbohydrate,
     Fat,
@@ -16,7 +16,7 @@ enum class NutrientCategory {
 /**
  * Nutrient type with a specified [category]
  */
-enum class NutrientType(val category: NutrientCategory) {
+public enum class NutrientType(public val category: NutrientCategory) {
     Protein(NutrientCategory.Protein),
 
     TotalCarbohydrate(NutrientCategory.Carbohydrate),
@@ -46,42 +46,42 @@ enum class NutrientType(val category: NutrientCategory) {
     VitaminC(NutrientCategory.Vitamin),
     ;
 
-    companion object
+    public companion object
 }
 
 /**
  * All [NutrientType] with [NutrientType.category] equal to [NutrientCategory.Carbohydrate]
  */
-fun NutrientType.Companion.allCarbohydrates(): List<NutrientType> =
+public fun NutrientType.Companion.allCarbohydrates(): List<NutrientType> =
     NutrientType.entries.filter { it.category == NutrientCategory.Carbohydrate }
 
 /**
  * All [NutrientType] with [NutrientType.category] equal to [NutrientCategory.Fat]
  */
-fun NutrientType.Companion.allFats(): List<NutrientType> =
+public fun NutrientType.Companion.allFats(): List<NutrientType> =
     NutrientType.entries.filter { it.category == NutrientCategory.Fat }
 
 /**
  * All [NutrientType] with [NutrientType.category] equal to [NutrientCategory.Mineral]
  */
-fun NutrientType.Companion.allMinerals(): List<NutrientType> =
+public fun NutrientType.Companion.allMinerals(): List<NutrientType> =
     NutrientType.entries.filter { it.category == NutrientCategory.Mineral }
 
 /**
  * All [NutrientType] with [NutrientType.category] equal to [NutrientCategory.Vitamin]
  */
-fun NutrientType.Companion.allVitamins(): List<NutrientType> =
+public fun NutrientType.Companion.allVitamins(): List<NutrientType> =
     NutrientType.entries.filter { it.category == NutrientCategory.Vitamin }
 
 
 /**
  * Specific amount of [NutrientType] in [Mass]
  */
-sealed interface Nutrient {
-    val nutrientType: NutrientType
-    val mass: Mass
+public sealed interface Nutrient {
+    public val nutrientType: NutrientType
+    public val mass: Mass
 
-    companion object
+    public companion object
 }
 
 internal data class NutrientImplementation(
@@ -89,35 +89,35 @@ internal data class NutrientImplementation(
     override val mass: Mass,
 ) : Nutrient
 
-fun makeNutrient(nutrientType: NutrientType, mass: Mass): Nutrient =
+public fun makeNutrient(nutrientType: NutrientType, mass: Mass): Nutrient =
     NutrientImplementation(nutrientType = nutrientType, mass = mass)
 
-operator fun NutrientType.invoke(mass: Mass): Nutrient = makeNutrient(nutrientType = this, mass = mass)
-operator fun Nutrient.Companion.invoke(nutrientType: NutrientType, mass: Mass): Nutrient =
+public operator fun NutrientType.invoke(mass: Mass): Nutrient = makeNutrient(nutrientType = this, mass = mass)
+public operator fun Nutrient.Companion.invoke(nutrientType: NutrientType, mass: Mass): Nutrient =
     makeNutrient(nutrientType = nutrientType, mass = mass)
 
 
-val FoodNutrition.protein: Mass? get() = get(NutrientType.Protein)
-val FoodNutrition.totalCarbohydrate: Mass? get() = get(NutrientType.TotalCarbohydrate)
-val FoodNutrition.fiber: Mass? get() = get(NutrientType.Fiber)
-val FoodNutrition.sugar: Mass? get() = get(NutrientType.Sugar)
-val FoodNutrition.sugarAlcohol: Mass? get() = get(NutrientType.SugarAlcohol)
-val FoodNutrition.starch: Mass? get() = get(NutrientType.Starch)
-val FoodNutrition.totalFat: Mass? get() = get(NutrientType.TotalFat)
-val FoodNutrition.monounsaturatedFat: Mass? get() = get(NutrientType.MonounsaturatedFat)
-val FoodNutrition.polyunsaturatedFat: Mass? get() = get(NutrientType.PolyunsaturatedFat)
-val FoodNutrition.omega3: Mass? get() = get(NutrientType.Omega3)
-val FoodNutrition.omega6: Mass? get() = get(NutrientType.Omega6)
-val FoodNutrition.saturatedFat: Mass? get() = get(NutrientType.SaturatedFat)
-val FoodNutrition.transFat: Mass? get() = get(NutrientType.TransFat)
-val FoodNutrition.cholesterol: Mass? get() = get(NutrientType.Cholesterol)
-val FoodNutrition.calcium: Mass? get() = get(NutrientType.Calcium)
-val FoodNutrition.chloride: Mass? get() = get(NutrientType.Chloride)
+public val FoodNutrition.protein: Mass? get() = get(NutrientType.Protein)
+public val FoodNutrition.totalCarbohydrate: Mass? get() = get(NutrientType.TotalCarbohydrate)
+public val FoodNutrition.fiber: Mass? get() = get(NutrientType.Fiber)
+public val FoodNutrition.sugar: Mass? get() = get(NutrientType.Sugar)
+public val FoodNutrition.sugarAlcohol: Mass? get() = get(NutrientType.SugarAlcohol)
+public val FoodNutrition.starch: Mass? get() = get(NutrientType.Starch)
+public val FoodNutrition.totalFat: Mass? get() = get(NutrientType.TotalFat)
+public val FoodNutrition.monounsaturatedFat: Mass? get() = get(NutrientType.MonounsaturatedFat)
+public val FoodNutrition.polyunsaturatedFat: Mass? get() = get(NutrientType.PolyunsaturatedFat)
+public val FoodNutrition.omega3: Mass? get() = get(NutrientType.Omega3)
+public val FoodNutrition.omega6: Mass? get() = get(NutrientType.Omega6)
+public val FoodNutrition.saturatedFat: Mass? get() = get(NutrientType.SaturatedFat)
+public val FoodNutrition.transFat: Mass? get() = get(NutrientType.TransFat)
+public val FoodNutrition.cholesterol: Mass? get() = get(NutrientType.Cholesterol)
+public val FoodNutrition.calcium: Mass? get() = get(NutrientType.Calcium)
+public val FoodNutrition.chloride: Mass? get() = get(NutrientType.Chloride)
 
-val FoodNutrition.iron: Mass? get() = get(NutrientType.Iron)
-val FoodNutrition.magnesium: Mass? get() = get(NutrientType.Magnesium)
-val FoodNutrition.phosphorous: Mass? get() = get(NutrientType.Phosphorous)
-val FoodNutrition.potassium: Mass? get() = get(NutrientType.Potassium)
-val FoodNutrition.sodium: Mass? get() = get(NutrientType.Sodium)
-val FoodNutrition.vitaminA: Mass? get() = get(NutrientType.VitaminA)
-val FoodNutrition.vitaminC: Mass? get() = get(NutrientType.VitaminC)
+public val FoodNutrition.iron: Mass? get() = get(NutrientType.Iron)
+public val FoodNutrition.magnesium: Mass? get() = get(NutrientType.Magnesium)
+public val FoodNutrition.phosphorous: Mass? get() = get(NutrientType.Phosphorous)
+public val FoodNutrition.potassium: Mass? get() = get(NutrientType.Potassium)
+public val FoodNutrition.sodium: Mass? get() = get(NutrientType.Sodium)
+public val FoodNutrition.vitaminA: Mass? get() = get(NutrientType.VitaminA)
+public val FoodNutrition.vitaminC: Mass? get() = get(NutrientType.VitaminC)

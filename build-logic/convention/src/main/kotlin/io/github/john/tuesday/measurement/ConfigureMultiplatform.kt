@@ -16,6 +16,7 @@ internal fun KotlinMultiplatformExtension.configureCommon() {
  * Configure Kotlin language settings for all targets
  */
 internal fun KotlinMultiplatformExtension.configureKotlin() {
+    explicitApi()
     sourceSets.configureEach {
         languageSettings {
             languageVersion = "1.9"

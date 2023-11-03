@@ -7,8 +7,8 @@ import org.calamarfederal.physical.measurement.milligrams
 /**
  * [FoodNutrition] samples to be used in testing
  */
-object NutritionSamples {
-    val filledNutritionA get() = FoodNutrition(
+public object NutritionSamples {
+    public val filledNutritionA: FoodNutrition get() = FoodNutrition(
     portion = Portion(100.grams),
     foodEnergy = 359.kilocalories,
         mapOf(
@@ -38,7 +38,7 @@ object NutritionSamples {
         )
     )
 
-    val filledNonZeroNutritionA get() = FoodNutrition(
+    public val filledNonZeroNutritionA: FoodNutrition get() = FoodNutrition(
         portion = Portion(100.grams),
         foodEnergy = 359.kilocalories,
         mapOf(
@@ -71,7 +71,7 @@ object NutritionSamples {
     /**
      * Each property is unique by counting
      */
-    val filledNutritionB get() = FoodNutrition(
+    public val filledNutritionB: FoodNutrition get() = FoodNutrition(
         portion = Portion(1.grams),
         foodEnergy = 2.kilocalories,
         NutrientType.entries.withIndex().associate { (index, type) -> type to (index + 2).grams }

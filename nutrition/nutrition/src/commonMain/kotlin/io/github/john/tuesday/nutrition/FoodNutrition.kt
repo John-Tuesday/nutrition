@@ -2,21 +2,21 @@ package io.github.john.tuesday.nutrition
 
 import org.calamarfederal.physical.measurement.*
 
-typealias NutritionMap = Map<NutrientType, Mass>
+public typealias NutritionMap = Map<NutrientType, Mass>
 internal val Map.Entry<NutrientType, Mass>.nutrientType: NutrientType get() = key
 internal val Map.Entry<NutrientType, Mass>.mass: Mass get() = value
 
 /**
  * Nutritional facts about something
  */
-sealed interface FoodNutrition {
-    val portion: Portion
-    val foodEnergy: Energy
-    val nutrients: NutritionMap
-    operator fun get(nutrientType: NutrientType): Mass? = nutrients[nutrientType]
+public sealed interface FoodNutrition {
+    public val portion: Portion
+    public val foodEnergy: Energy
+    public val nutrients: NutritionMap
+    public operator fun get(nutrientType: NutrientType): Mass? = nutrients[nutrientType]
 
-    companion object {
-        operator fun invoke(
+    public companion object {
+        public operator fun invoke(
             portion: Portion,
             foodEnergy: Energy = 0.kilocalories,
             nutritionMap: NutritionMap = mapOf(),
@@ -33,7 +33,7 @@ internal data class FoodNutritionMapImpl(
 /**
  * Mirrors copy() of a `data class`
  */
-fun FoodNutrition.mutate(
+public fun FoodNutrition.mutate(
     portion: Portion = this.portion,
     foodEnergy: Energy = this.foodEnergy,
     nutritionMap: NutritionMap = this.nutrients,
@@ -45,7 +45,7 @@ fun FoodNutrition.mutate(
  *
  * @throws [MismatchPortionError] when `this.portion` and [newPortion] are not compatible types
  */
-fun FoodNutrition.scaleToPortion(newPortion: Portion): FoodNutrition {
+public fun FoodNutrition.scaleToPortion(newPortion: Portion): FoodNutrition {
     val scale = newPortion / portion
     return FoodNutrition.invoke(
         portion = portion * scale,
@@ -59,7 +59,7 @@ fun FoodNutrition.scaleToPortion(newPortion: Portion): FoodNutrition {
 /**
  * New [FoodNutrition] with each property increased by the respective property in [other]
  */
-operator fun FoodNutrition.plus(other: FoodNutrition): FoodNutrition {
+public operator fun FoodNutrition.plus(other: FoodNutrition): FoodNutrition {
     val map = nutrients.toMutableMap()
     for ((nutrientType, mass) in other.nutrients)
         map[nutrientType] = (map[nutrientType] ?: 0.grams) + mass
@@ -74,7 +74,7 @@ operator fun FoodNutrition.plus(other: FoodNutrition): FoodNutrition {
 /**
  * New [FoodNutrition] with each property reduced by the respective property in [other]
  */
-operator fun FoodNutrition.minus(other: FoodNutrition): FoodNutrition {
+public operator fun FoodNutrition.minus(other: FoodNutrition): FoodNutrition {
     val map = nutrients.toMutableMap()
     for ((nutrientType, mass) in other.nutrients)
         map[nutrientType] = (map[nutrientType] ?: 0.grams) - mass
@@ -89,7 +89,7 @@ operator fun FoodNutrition.minus(other: FoodNutrition): FoodNutrition {
 /**
  * Negate [FoodNutrition.portion], [FoodNutrition.foodEnergy], and all [FoodNutrition.nutrients]
  */
-operator fun FoodNutrition.unaryMinus(): FoodNutrition {
+public operator fun FoodNutrition.unaryMinus(): FoodNutrition {
     return FoodNutrition.invoke(
         portion = -portion,
         foodEnergy = -foodEnergy,
@@ -100,7 +100,7 @@ operator fun FoodNutrition.unaryMinus(): FoodNutrition {
 /**
  * New [FoodNutrition] but with [nutrient] added to the existing value or inserted
  */
-operator fun FoodNutrition.plus(nutrient: Nutrient): FoodNutrition {
+public operator fun FoodNutrition.plus(nutrient: Nutrient): FoodNutrition {
     return FoodNutrition(
         portion = portion,
         foodEnergy = foodEnergy,
@@ -113,7 +113,7 @@ operator fun FoodNutrition.plus(nutrient: Nutrient): FoodNutrition {
 /**
  * New [FoodNutrition] but with [nutrient] subtracted from the existing value or insert the negative
  */
-operator fun FoodNutrition.minus(nutrient: Nutrient): FoodNutrition {
+public operator fun FoodNutrition.minus(nutrient: Nutrient): FoodNutrition {
     return FoodNutrition(
         portion = portion,
         foodEnergy = foodEnergy,
