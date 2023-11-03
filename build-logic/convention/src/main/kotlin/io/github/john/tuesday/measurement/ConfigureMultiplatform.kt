@@ -1,5 +1,6 @@
 package io.github.john.tuesday.measurement
 
+import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
@@ -19,8 +20,8 @@ internal fun KotlinMultiplatformExtension.configureKotlin() {
     explicitApi()
     sourceSets.configureEach {
         languageSettings {
-            languageVersion = "1.9"
-            apiVersion = "1.9"
+            languageVersion = Versions.kotlin.version
+            apiVersion = Versions.kotlin.version
             progressiveMode = true
         }
     }
@@ -31,7 +32,7 @@ internal fun KotlinMultiplatformExtension.configureKotlin() {
  */
 internal fun KotlinMultiplatformExtension.configureJvm() {
     jvm {
-        jvmToolchain(8)
+        jvmToolchain(JavaLanguageVersion.of(Versions.java.majorVersion).asInt())
         withJava()
         testRuns.named("test") {
             executionTask.configure {
