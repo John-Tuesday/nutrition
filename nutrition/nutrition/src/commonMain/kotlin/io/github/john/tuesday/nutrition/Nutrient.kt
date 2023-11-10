@@ -93,18 +93,32 @@ public sealed class Nutrient {
     public companion object
 }
 
+/**
+ * Basic implementation of [Nutrient]
+ */
 internal class NutrientImplementation(
     override val nutrientType: NutrientType,
     override val mass: Mass,
 ) : Nutrient()
 
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("Nutrient(NutrientType, Mass)"),
+    level = DeprecationLevel.WARNING,
+)
 public fun makeNutrient(nutrientType: NutrientType, mass: Mass): Nutrient =
     NutrientImplementation(nutrientType = nutrientType, mass = mass)
 
-public operator fun NutrientType.invoke(mass: Mass): Nutrient = makeNutrient(nutrientType = this, mass = mass)
-public operator fun Nutrient.Companion.invoke(nutrientType: NutrientType, mass: Mass): Nutrient =
-    makeNutrient(nutrientType = nutrientType, mass = mass)
+/**
+ * Create a [Nutrient] with matching [nutrientType] and [mass]
+ */
+public fun Nutrient(nutrientType: NutrientType, mass: Mass): Nutrient =
+    NutrientImplementation(nutrientType = nutrientType, mass = mass)
 
+/**
+ * Create a [Nutrient] whose [Nutrient.nutrientType] is `this` and [Nutrient.mass] is [mass]
+ */
+public operator fun NutrientType.invoke(mass: Mass): Nutrient = Nutrient(nutrientType = this, mass = mass)
 
 public val FoodNutrition.protein: Mass? get() = get(NutrientType.Protein)
 public val FoodNutrition.totalCarbohydrate: Mass? get() = get(NutrientType.TotalCarbohydrate)
