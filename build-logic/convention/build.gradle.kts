@@ -42,8 +42,8 @@ gradlePlugin {
             implementationClass = "KotlinLibraryNativeConvention"
         }
 
-        register("mavenPublication") {
-            id = "measure.maven.publication"
+        val mavenPublication by registering {
+            id = "nutrition.maven.publication"
             implementationClass = "MavenPublicationConvention"
         }
     }
