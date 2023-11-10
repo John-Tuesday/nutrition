@@ -8,16 +8,24 @@ import io.github.john.tuesday.measurement.*
  *
  * measured in [Mass] or [Volume] (exclusive)
  */
-public sealed interface Portion {
-    public val mass: Mass?
-    public val volume: Volume?
+public sealed class Portion {
+    public abstract val mass: Mass?
+    public abstract val volume: Volume?
 
-    public companion object {
-        public operator fun invoke(mass: Mass): MassPortion = MassPortion(mass = mass)
+    override fun toString(): String = "Portion(mass=$mass, volume=$volume)"
 
-        public operator fun invoke(volume: Volume): VolumePortion = VolumePortion(volume = volume)
+    override fun equals(other: Any?): Boolean = other is Portion && mass == other.mass && volume == other.volume
+    override fun hashCode(): Int {
+        var result = mass?.hashCode() ?: 0
+        result = 31 * result + (volume?.hashCode() ?: 0)
+        return result
     }
+
+    public companion object
 }
+
+public fun Portion(mass: Mass): Portion = MassPortion(mass)
+public fun Portion(volume: Volume): Portion = VolumePortion(volume)
 
 /**
  * Fold `this` to a single value [T] by calling [onMassPortion] if `this` is [MassPortion]
@@ -33,34 +41,40 @@ public inline fun <T> Portion.fold(onMassPortion: (Mass) -> T, onVolumePortion: 
  *
  * @see [Portion]
  */
-public sealed class MassPortion(override val mass: Mass) : Portion {
+public sealed class MassPortion : Portion(), Comparable<MassPortion> {
     final override val volume: Volume? = null
+    abstract override val mass: Mass
 
-    public companion object {
-        public operator fun invoke(mass: Mass = 0.grams): MassPortion = MassPortionImpl(mass = mass)
-    }
+    override fun compareTo(other: MassPortion): Int = mass.compareTo(other.mass)
+
+    public companion object
 }
+
+public fun MassPortion(mass: Mass = 0.grams): MassPortion = MassPortionImpl(mass = mass)
 
 /**
  * Portion of food measured in [Volume]
  *
  * @see [Portion]
  */
-public sealed class VolumePortion(override val volume: Volume) : Portion {
+public sealed class VolumePortion : Portion(), Comparable<VolumePortion> {
     final override val mass: Mass? = null
+    abstract override val volume: Volume
 
-    public companion object {
-        public operator fun invoke(volume: Volume = 0.milliliters): VolumePortion = VolumePortionImpl(volume = volume)
-    }
+    override fun compareTo(other: VolumePortion): Int = volume.compareTo(other.volume)
+
+    public companion object
 }
 
-internal data class MassPortionImpl(
-    override val mass: Mass,
-) : MassPortion(mass = mass)
+public fun VolumePortion(volume: Volume = 0.liters): VolumePortion = VolumePortionImpl(volume = volume)
 
-internal data class VolumePortionImpl(
+internal class MassPortionImpl(
+    override val mass: Mass,
+) : MassPortion()
+
+internal class VolumePortionImpl(
     override val volume: Volume,
-) : VolumePortion(volume = volume)
+) : VolumePortion()
 
 public operator fun MassPortion.plus(other: MassPortion): MassPortion = MassPortion(mass = mass + other.mass)
 public operator fun VolumePortion.plus(other: VolumePortion): VolumePortion = VolumePortion(volume = volume + other.volume)
