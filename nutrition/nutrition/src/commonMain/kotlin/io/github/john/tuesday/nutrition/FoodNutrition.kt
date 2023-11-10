@@ -42,7 +42,12 @@ public sealed class FoodNutrition {
     }
 }
 
-internal data class FoodNutritionMapImpl(
+public fun FoodNutrition(
+    portion: Portion,
+    foodEnergy: Energy = 0.kilocalories,
+    nutrients: NutritionMap = mapOf()
+): FoodNutrition = FoodNutritionMapImpl(portion = portion, foodEnergy = foodEnergy, nutrients = nutrients)
+
 internal class FoodNutritionMapImpl(
     override val portion: Portion,
     override val foodEnergy: Energy,
@@ -56,8 +61,7 @@ public fun FoodNutrition.mutate(
     portion: Portion = this.portion,
     foodEnergy: Energy = this.foodEnergy,
     nutritionMap: NutritionMap = this.nutrients,
-): FoodNutrition = FoodNutrition(portion = portion, foodEnergy = foodEnergy, nutritionMap = nutritionMap)
-
+): FoodNutrition = FoodNutrition(portion = portion, foodEnergy = foodEnergy, nutrients = nutritionMap)
 
 /**
  * Create a [FoodNutrition] with all properties scaled to make `portion == newPortion`
@@ -66,13 +70,12 @@ public fun FoodNutrition.mutate(
  */
 public fun FoodNutrition.scaleToPortion(newPortion: Portion): FoodNutrition {
     val scale = newPortion / portion
-    return FoodNutrition.invoke(
+    return FoodNutrition(
         portion = portion * scale,
         foodEnergy = foodEnergy * scale,
-        nutritionMap = nutrients.mapValues { it.mass * scale }
+        nutrients = nutrients.mapValues { it.mass * scale }
     )
 }
-
 
 
 /**
@@ -86,7 +89,7 @@ public operator fun FoodNutrition.plus(other: FoodNutrition): FoodNutrition {
     return FoodNutrition(
         portion = portion + other.portion,
         foodEnergy = foodEnergy + other.foodEnergy,
-        nutritionMap = map.toMap(),
+        nutrients = map.toMap(),
     )
 }
 
@@ -101,7 +104,7 @@ public operator fun FoodNutrition.minus(other: FoodNutrition): FoodNutrition {
     return FoodNutrition(
         portion = portion - other.portion,
         foodEnergy = foodEnergy - other.foodEnergy,
-        nutritionMap = map.toMap(),
+        nutrients = map.toMap(),
     )
 }
 
@@ -109,7 +112,7 @@ public operator fun FoodNutrition.minus(other: FoodNutrition): FoodNutrition {
  * Negate [FoodNutrition.portion], [FoodNutrition.foodEnergy], and all [FoodNutrition.nutrients]
  */
 public operator fun FoodNutrition.unaryMinus(): FoodNutrition {
-    return FoodNutrition.invoke(
+    return FoodNutrition(
         portion = -portion,
         foodEnergy = -foodEnergy,
         nutritionMap = nutrients.mapValues { -it.mass }
@@ -123,7 +126,7 @@ public operator fun FoodNutrition.plus(nutrient: Nutrient): FoodNutrition {
     return FoodNutrition(
         portion = portion,
         foodEnergy = foodEnergy,
-        nutritionMap = nutrients.toMutableMap().apply {
+        nutrients = nutrients.toMutableMap().apply {
             set(nutrient.nutrientType, nutrient.mass + (get(nutrient.nutrientType) ?: 0.grams))
         }.toMap()
     )
@@ -136,7 +139,7 @@ public operator fun FoodNutrition.minus(nutrient: Nutrient): FoodNutrition {
     return FoodNutrition(
         portion = portion,
         foodEnergy = foodEnergy,
-        nutritionMap = nutrients.toMutableMap().apply {
+        nutrients = nutrients.toMutableMap().apply {
             set(nutrient.nutrientType, (get(nutrient.nutrientType) ?: 0.grams) - nutrient.mass)
         }.toMap()
     )
