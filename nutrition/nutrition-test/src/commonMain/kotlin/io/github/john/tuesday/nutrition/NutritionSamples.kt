@@ -8,6 +8,9 @@ import io.github.john.tuesday.measurement.milligrams
  * [FoodNutrition] samples to be used in testing
  */
 public object NutritionSamples {
+    /**
+     * Realistic nutrition information
+     */
     public val filledNutritionA: FoodNutrition get() = FoodNutrition(
     portion = Portion(100.grams),
     foodEnergy = 359.kilocalories,
@@ -38,6 +41,9 @@ public object NutritionSamples {
         )
     )
 
+    /**
+     * Basically a copy of [filledNutritionA] but the 0 values are replace with small positive values
+     */
     public val filledNonZeroNutritionA: FoodNutrition get() = FoodNutrition(
         portion = Portion(100.grams),
         foodEnergy = 359.kilocalories,

@@ -1,5 +1,8 @@
 package io.github.john.tuesday.nutrition
 
+/**
+ * Rudimentary formatting so that properties are on new lines
+ */
 public fun FoodNutrition.toPrettyString(): String = toString()
     .replaceFirst("(", "(\n")
     .replace("{", "{\n")
@@ -8,6 +11,9 @@ public fun FoodNutrition.toPrettyString(): String = toString()
     .prependIndent("    ")
     .trimStart()
 
+/**
+ * Convert [foodNutrition] to a pretty string and print using [println]
+ */
 public fun prettyPrint(foodNutrition: FoodNutrition) {
     println(foodNutrition.toPrettyString())
 }
