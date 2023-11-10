@@ -5,7 +5,7 @@ import org.gradle.kotlin.dsl.assign
 
 
 const val MavenGroupId = "io.github.john-tuesday"
-const val MavenVersion = "0.1.4"
+const val MavenVersion = "0.2.0-alpha01"
 
 public data class RepositoryInfo(
     val name: String,
