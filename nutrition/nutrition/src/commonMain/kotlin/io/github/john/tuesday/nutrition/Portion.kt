@@ -24,7 +24,14 @@ public sealed class Portion {
     public companion object
 }
 
+/**
+ * Create a new [Portion] with [mass]
+ */
 public fun Portion(mass: Mass): Portion = MassPortion(mass)
+
+/**
+ * Create a new [Portion] with [volume]
+ */
 public fun Portion(volume: Volume): Portion = VolumePortion(volume)
 
 /**
@@ -50,6 +57,9 @@ public sealed class MassPortion : Portion(), Comparable<MassPortion> {
     public companion object
 }
 
+/**
+ * Create a [MassPortion] with [mass]
+ */
 public fun MassPortion(mass: Mass = 0.grams): MassPortion = MassPortionImpl(mass = mass)
 
 /**
@@ -66,21 +76,39 @@ public sealed class VolumePortion : Portion(), Comparable<VolumePortion> {
     public companion object
 }
 
+/**
+ * Create a [VolumePortion] with [volume]
+ */
 public fun VolumePortion(volume: Volume = 0.liters): VolumePortion = VolumePortionImpl(volume = volume)
 
+/**
+ * Basic implementation of [MassPortion]
+ */
 internal class MassPortionImpl(
     override val mass: Mass,
 ) : MassPortion()
 
+/**
+ * Basic implementation of [VolumePortion]
+ */
 internal class VolumePortionImpl(
     override val volume: Volume,
 ) : VolumePortion()
 
+/**
+ * Create a [MassPortion] whose [MassPortion.mass] is equal to the sum of mass in `this` and [other]
+ */
 public operator fun MassPortion.plus(other: MassPortion): MassPortion = MassPortion(mass = mass + other.mass)
-public operator fun VolumePortion.plus(other: VolumePortion): VolumePortion = VolumePortion(volume = volume + other.volume)
 
 /**
- * Attempts to add `this` and [other]
+ * Create a [VolumePortion] with [VolumePortion.volume] equal to the sum of volume in `this` and [other]
+ */
+public operator fun VolumePortion.plus(other: VolumePortion): VolumePortion =
+    VolumePortion(volume = volume + other.volume)
+
+/**
+ * Create a [Portion] whose volume or mass is equal to the sum of `this` and [other]. `this` and [other] should both be
+ * defined in the same measurement type; specifically, both are [MassPortion] or both are [VolumePortion]
  *
  * @throws [MismatchPortionError] if `this` and [other] are not the same type, i.e. [MassPortion] or [VolumePortion]
  */
@@ -90,12 +118,20 @@ public operator fun Portion.plus(other: Portion): Portion = when {
     else -> throw (MismatchPortionError(this, other))
 }
 
+/**
+ * Create a [MassPortion] with mass equal to `this.mass - other.mass`
+ */
 public operator fun MassPortion.minus(other: MassPortion): MassPortion = MassPortion(mass = mass - other.mass)
 
-public operator fun VolumePortion.minus(other: VolumePortion): VolumePortion = VolumePortion(volume = volume - other.volume)
+/**
+ * Create a [VolumePortion] with volume equal to `this.volume - other.volume`
+ */
+public operator fun VolumePortion.minus(other: VolumePortion): VolumePortion =
+    VolumePortion(volume = volume - other.volume)
 
 /**
- * Attempts to subtract `this` by [other]
+ * Create a [Portion] whose volume or mass is equal to `this` subtracted by [other]. `this` and [other] should both be
+ * defined in the same measurement type; specifically, both are [MassPortion] or both are [VolumePortion]
  *
  * @throws [MismatchPortionError] if `this` and [other] are not the same type, i.e. [MassPortion] or [VolumePortion]
  */
@@ -123,8 +159,19 @@ public operator fun Portion.unaryMinus(): Portion = when (this) {
     is VolumePortion -> unaryMinus()
 }
 
+/**
+ * Return [MassPortion] with positive [MassPortion.mass]
+ */
 public val MassPortion.absoluteValue: MassPortion get() = MassPortion(mass.absoluteValue)
+
+/**
+ * Return [VolumePortion] with positive [VolumePortion.volume]
+ */
 public val VolumePortion.absoluteValue: VolumePortion get() = VolumePortion(volume.absoluteValue)
+
+/**
+ * Return [Portion] with positive [Portion.mass] or [Portion.volume]. The other stays `null`
+ */
 public val Portion.absoluteValue: Portion
     get() = when (this) {
         is MassPortion -> absoluteValue
@@ -163,7 +210,7 @@ public operator fun VolumePortion.times(number: Number): VolumePortion = VolumeP
 /**
  * Scales `this` by [number]
  */
-public operator fun Portion.times(number: Number): Portion = when(this) {
+public operator fun Portion.times(number: Number): Portion = when (this) {
     is MassPortion -> times(number)
     is VolumePortion -> times(number)
 }
@@ -196,7 +243,7 @@ public operator fun VolumePortion.div(number: Number): VolumePortion = VolumePor
 /**
  * Shrinks `this` by [number]
  */
-public operator fun Portion.div(number: Number): Portion = when(this) {
+public operator fun Portion.div(number: Number): Portion = when (this) {
     is MassPortion -> div(number)
     is VolumePortion -> div(number)
 }
