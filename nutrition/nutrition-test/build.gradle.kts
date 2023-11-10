@@ -1,15 +1,22 @@
 import io.github.john.tuesday.measurement.MavenGroupId
 import io.github.john.tuesday.measurement.MavenVersion
+import io.github.john.tuesday.measurement.NutritionTestRepo
 
 plugins {
-    id("measure.kotlin.library")
-    id("measure.kotlin.library.jvm")
-    id("measure.kotlin.library.native")
-    id("measure.maven.publication")
+    id("nutrition.kotlin.library.multiplatform")
+    id("nutrition.maven.publication")
 }
 
 group = MavenGroupId
 version = MavenVersion
+
+publishing {
+    publications.withType<MavenPublication>().configureEach {
+        pom.name = NutritionTestRepo.name
+        pom.description = NutritionTestRepo.description
+        pom.url = NutritionTestRepo.homeUrl
+    }
+}
 
 kotlin {
     sourceSets {
