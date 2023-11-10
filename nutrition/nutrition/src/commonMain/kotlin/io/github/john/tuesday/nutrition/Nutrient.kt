@@ -77,17 +77,26 @@ public fun NutrientType.Companion.allVitamins(): List<NutrientType> =
 /**
  * Specific amount of [NutrientType] in [Mass]
  */
-public sealed interface Nutrient {
-    public val nutrientType: NutrientType
-    public val mass: Mass
+public sealed class Nutrient {
+    public abstract val nutrientType: NutrientType
+    public abstract val mass: Mass
+
+    override fun equals(other: Any?): Boolean =
+        other is Nutrient && nutrientType == other.nutrientType && mass == other.mass
+    override fun toString(): String = "Nutrient(nutrientType=$nutrientType, mass=$mass)"
+    override fun hashCode(): Int {
+        var result = nutrientType.hashCode()
+        result = 31 * result + mass.hashCode()
+        return result
+    }
 
     public companion object
 }
 
-internal data class NutrientImplementation(
+internal class NutrientImplementation(
     override val nutrientType: NutrientType,
     override val mass: Mass,
-) : Nutrient
+) : Nutrient()
 
 public fun makeNutrient(nutrientType: NutrientType, mass: Mass): Nutrient =
     NutrientImplementation(nutrientType = nutrientType, mass = mass)
