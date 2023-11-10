@@ -1,6 +1,6 @@
 package io.github.john.tuesday.nutrition
 
-import org.calamarfederal.physical.measurement.*
+import io.github.john.tuesday.measurement.*
 
 
 /**

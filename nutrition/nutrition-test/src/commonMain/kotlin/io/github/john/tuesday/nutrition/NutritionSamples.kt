@@ -1,8 +1,8 @@
 package io.github.john.tuesday.nutrition
 
-import org.calamarfederal.physical.measurement.grams
-import org.calamarfederal.physical.measurement.kilocalories
-import org.calamarfederal.physical.measurement.milligrams
+import io.github.john.tuesday.measurement.grams
+import io.github.john.tuesday.measurement.kilocalories
+import io.github.john.tuesday.measurement.milligrams
 
 /**
  * [FoodNutrition] samples to be used in testing
