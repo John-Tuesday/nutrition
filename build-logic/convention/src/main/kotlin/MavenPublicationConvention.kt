@@ -1,5 +1,5 @@
-import io.github.john.tuesday.measurement.NutritionRepo
-import io.github.john.tuesday.measurement.johnTuesday
+import io.github.john.tuesday.nutrition.NutritionRepo
+import io.github.john.tuesday.nutrition.johnTuesday
 import io.github.john.tuesday.plugins.MavenPublishAssistPlugin
 import io.github.john.tuesday.plugins.publishing.model.LicensePreset
 import io.github.john.tuesday.plugins.publishing.model.MavenRepository

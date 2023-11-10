@@ -1,4 +1,4 @@
-package io.github.john.tuesday.measurement
+package io.github.john.tuesday.nutrition
 
 import org.gradle.api.JavaVersion
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion

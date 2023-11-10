@@ -1,4 +1,4 @@
-package io.github.john.tuesday.measurement
+package io.github.john.tuesday.nutrition
 
 import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.kotlin.dsl.assign

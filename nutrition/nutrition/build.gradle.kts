@@ -1,6 +1,6 @@
-import io.github.john.tuesday.measurement.MavenGroupId
-import io.github.john.tuesday.measurement.MavenVersion
-import io.github.john.tuesday.measurement.NutritionRepo
+import io.github.john.tuesday.nutrition.MavenGroupId
+import io.github.john.tuesday.nutrition.MavenVersion
+import io.github.john.tuesday.nutrition.NutritionRepo
 
 plugins {
     id("nutrition.kotlin.library.multiplatform")

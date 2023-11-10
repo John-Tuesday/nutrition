@@ -1,5 +1,5 @@
-import io.github.john.tuesday.measurement.configureCommon
-import io.github.john.tuesday.measurement.configureJvm
+import io.github.john.tuesday.nutrition.configureCommon
+import io.github.john.tuesday.nutrition.configureJvm
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
