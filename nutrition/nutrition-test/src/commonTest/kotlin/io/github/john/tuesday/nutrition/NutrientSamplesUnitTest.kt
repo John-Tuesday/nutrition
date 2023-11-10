@@ -12,7 +12,7 @@ private fun assertAllFilled(foodNutrition: FoodNutrition, assertNonZero: Boolean
     assertNotEquals(0.00, foodNutrition.foodEnergy.inKilocalories())
     assertNotEquals(0.00, foodNutrition.portion.fold({ it.inGrams() }, { it.inMilliliters() }))
     NutrientType.entries.onEach {
-        val actual = foodNutrition[it]
+        val actual = foodNutrition.nutrients[it]
         assertNotNull(actual, message = "Nutrient $it is null")
         if (assertNonZero)
             assertNotEquals(0.00, actual.inGrams(), message = "Expected nutrient $it not equal to 0.00, but found $actual")

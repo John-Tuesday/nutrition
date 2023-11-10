@@ -14,6 +14,12 @@ public sealed class FoodNutrition {
     public abstract val portion: Portion
     public abstract val foodEnergy: Energy
     public abstract val nutrients: NutritionMap
+
+    @Deprecated(
+        message = "This is a near useless function. Will be removed in 0.2.0",
+        replaceWith = ReplaceWith("FoodNutrition.nutrients.get(...)"),
+        level = DeprecationLevel.WARNING,
+    )
     public operator fun get(nutrientType: NutrientType): Mass? = nutrients[nutrientType]
 
     override fun toString(): String = "FoodNutrition(portion=$portion, foodEnergy=$foodEnergy, nutrients=$nutrients)"
