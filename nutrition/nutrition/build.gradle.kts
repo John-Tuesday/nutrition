@@ -5,6 +5,7 @@ import io.github.john.tuesday.measurement.NutritionRepo
 plugins {
     id("nutrition.kotlin.library.multiplatform")
     id("nutrition.maven.publication")
+    alias(libs.plugins.dokka)
 }
 
 group = MavenGroupId
