@@ -4,9 +4,6 @@ import io.github.john.tuesday.measurement.*
 
 public typealias NutritionMap = Map<NutrientType, Mass>
 
-internal val Map.Entry<NutrientType, Mass>.nutrientType: NutrientType get() = key
-internal val Map.Entry<NutrientType, Mass>.mass: Mass get() = value
-
 /**
  * Nutritional facts about something
  */
@@ -42,12 +39,18 @@ public sealed class FoodNutrition {
     public companion object
 }
 
+/**
+ * Create a new [FoodNutrition] with matching [portion], [foodEnergy], and [nutrients]
+ */
 public fun FoodNutrition(
     portion: Portion,
     foodEnergy: Energy = 0.kilocalories,
     nutrients: NutritionMap = mapOf()
 ): FoodNutrition = FoodNutritionMapImpl(portion = portion, foodEnergy = foodEnergy, nutrients = nutrients)
 
+/**
+ * Basic implementation of [FoodNutrition]
+ */
 internal class FoodNutritionMapImpl(
     override val portion: Portion,
     override val foodEnergy: Energy,
@@ -73,7 +76,7 @@ public fun FoodNutrition.scaleToPortion(newPortion: Portion): FoodNutrition {
     return FoodNutrition(
         portion = portion * scale,
         foodEnergy = foodEnergy * scale,
-        nutrients = nutrients.mapValues { it.mass * scale }
+        nutrients = nutrients.mapValues { it.value * scale }
     )
 }
 
@@ -115,7 +118,7 @@ public operator fun FoodNutrition.unaryMinus(): FoodNutrition {
     return FoodNutrition(
         portion = -portion,
         foodEnergy = -foodEnergy,
-        nutrients = nutrients.mapValues { -it.mass }
+        nutrients = nutrients.mapValues { -it.value }
     )
 }
 
