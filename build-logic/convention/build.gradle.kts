@@ -25,21 +25,13 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        register("kotlinLibrary") {
-            id = "measure.kotlin.library"
+        val kotlinLibrary by registering {
+            id = "nutrition.kotlin.library"
             implementationClass = "KotlinLibraryConvention"
         }
-        register("kotlinLibraryJvm") {
-            id = "measure.kotlin.library.jvm"
-            implementationClass = "KotlinLibraryJvmConvention"
-        }
-        register("kotlinLibraryAndroid") {
-            id = "measure.kotlin.library.android"
-            implementationClass = "KotlinLibraryAndroidConvention"
-        }
-        register("kotlinLibraryNative") {
-            id = "measure.kotlin.library.native"
-            implementationClass = "KotlinLibraryNativeConvention"
+        val kotlinLibraryMultiplatform by registering {
+            id = "nutrition.kotlin.library.multiplatform"
+            implementationClass = "KotlinLibraryMultiplatformConvention"
         }
 
         val mavenPublication by registering {

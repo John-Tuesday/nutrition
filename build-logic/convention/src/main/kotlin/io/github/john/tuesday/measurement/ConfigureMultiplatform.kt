@@ -1,29 +1,24 @@
 package io.github.john.tuesday.measurement
 
 import org.gradle.jvm.toolchain.JavaLanguageVersion
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.gradle.kotlin.dsl.assign
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
-
-/**
- * Configure Kotlin Multiplatform common to all targets
- */
-@OptIn(ExperimentalKotlinGradlePluginApi::class)
-internal fun KotlinMultiplatformExtension.configureCommon() {
-    targetHierarchy.default()
-    configureKotlin()
-}
+import org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension
 
 /**
  * Configure Kotlin language settings for all targets
  */
-internal fun KotlinMultiplatformExtension.configureKotlin() {
-    explicitApi()
+internal fun KotlinProjectExtension.configureCommon() {
     sourceSets.configureEach {
         languageSettings {
+            explicitApi()
             languageVersion = Versions.kotlin.version
             apiVersion = Versions.kotlin.version
             progressiveMode = true
         }
+    }
+    jvmToolchain {
+        languageVersion = JavaLanguageVersion.of(Versions.java.majorVersion)
     }
 }
 
@@ -32,7 +27,6 @@ internal fun KotlinMultiplatformExtension.configureKotlin() {
  */
 internal fun KotlinMultiplatformExtension.configureJvm() {
     jvm {
-        jvmToolchain(JavaLanguageVersion.of(Versions.java.majorVersion).asInt())
         withJava()
         testRuns.named("test") {
             executionTask.configure {
@@ -40,20 +34,4 @@ internal fun KotlinMultiplatformExtension.configureJvm() {
             }
         }
     }
-}
-
-internal fun KotlinMultiplatformExtension.configureAndroid() {
-    androidTarget {
-        publishLibraryVariants = listOf("release", "debug")
-    }
-}
-/**
- * Configure the native target
- */
-internal fun KotlinMultiplatformExtension.configureNative() {
-    linuxArm64()
-    linuxX64()
-    mingwX64()
-//    macosX64()
-//    macosArm64()
 }
