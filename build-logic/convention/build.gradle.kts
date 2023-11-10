@@ -19,6 +19,7 @@ dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.kotlin.multiplatform.gradlePlugin)
     compileOnly(libs.kotlin.android.gradlePlugin)
+    compileOnly(libs.maven.publish.assist.gradlePlugin)
     compileOnly(libs.android.gradlePlugin)
 }
 

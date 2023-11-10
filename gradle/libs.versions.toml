@@ -4,6 +4,7 @@ junit = "5.10.0"
 junitPlatform = "1.10.0"
 kotlin = "1.9.20"
 measure = "2.0.0-alpha01"
+mavenPublishAssist = "0.0.0"
 
 [libraries]
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
@@ -17,9 +18,11 @@ android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref 
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-multiplatform-gradlePlugin = { module = "org.jetbrains.kotlin.multiplatform:org.jetbrains.kotlin.multiplatform.gradle.plugin", version.ref = "kotlin" }
 kotlin-android-gradlePlugin = { module = "org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin", version.ref = "kotlin" }
+maven-publish-assist-gradlePlugin = { module = "io.github.john-tuesday.maven-publish-assist:io.github.john-tuesday.maven-publish-assist.gradle.plugin", version.ref = "mavenPublishAssist" }
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+maven-publish-assist = { id = "io.github.john-tuesday.maven-publish-assist", version.ref = "mavenPublishAssist" }
 
 [bundles]
 
