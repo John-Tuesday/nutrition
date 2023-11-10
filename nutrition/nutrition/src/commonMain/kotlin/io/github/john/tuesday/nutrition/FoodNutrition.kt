@@ -33,13 +33,7 @@ public sealed class FoodNutrition {
         return result
     }
 
-    public companion object {
-        public operator fun invoke(
-            portion: Portion,
-            foodEnergy: Energy = 0.kilocalories,
-            nutritionMap: NutritionMap = mapOf(),
-        ): FoodNutrition = FoodNutritionMapImpl(portion = portion, foodEnergy = foodEnergy, nutrients = nutritionMap)
-    }
+    public companion object
 }
 
 public fun FoodNutrition(
@@ -115,7 +109,7 @@ public operator fun FoodNutrition.unaryMinus(): FoodNutrition {
     return FoodNutrition(
         portion = -portion,
         foodEnergy = -foodEnergy,
-        nutritionMap = nutrients.mapValues { -it.mass }
+        nutrients = nutrients.mapValues { -it.mass }
     )
 }
 

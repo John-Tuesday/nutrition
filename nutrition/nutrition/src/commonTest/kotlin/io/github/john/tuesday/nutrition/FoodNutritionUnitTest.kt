@@ -7,19 +7,19 @@ class FoodNutritionUnitTest {
     private val zero = FoodNutrition(
         portion = Portion(0.grams),
         foodEnergy = 0.kilocalories,
-        nutritionMap = NutrientType.entries.associateWith { 0.grams }
+        nutrients = NutrientType.entries.associateWith { 0.grams }
     )
     private val oneBase = 1
     private val one = FoodNutrition(
         portion = Portion(oneBase.grams),
         foodEnergy = oneBase.kilocalories,
-        nutritionMap = NutrientType.entries.associateWith { oneBase.grams }
+        nutrients = NutrientType.entries.associateWith { oneBase.grams }
     )
     private val twoBase = 2
     private val two = FoodNutrition(
         portion = Portion(twoBase.grams),
         foodEnergy = twoBase.kilocalories,
-        nutritionMap = NutrientType.entries.associateWith { twoBase.grams }
+        nutrients = NutrientType.entries.associateWith { twoBase.grams }
     )
     private val nutritionMass = two
     private val nutritionVolume = two.mutate(portion = Portion(1.liters))
