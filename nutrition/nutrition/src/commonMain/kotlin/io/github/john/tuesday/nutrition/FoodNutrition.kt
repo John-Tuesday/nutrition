@@ -3,17 +3,35 @@ package io.github.john.tuesday.nutrition
 import io.github.john.tuesday.measurement.*
 
 public typealias NutritionMap = Map<NutrientType, Mass>
+
 internal val Map.Entry<NutrientType, Mass>.nutrientType: NutrientType get() = key
 internal val Map.Entry<NutrientType, Mass>.mass: Mass get() = value
 
 /**
  * Nutritional facts about something
  */
-public sealed interface FoodNutrition {
-    public val portion: Portion
-    public val foodEnergy: Energy
-    public val nutrients: NutritionMap
+public sealed class FoodNutrition {
+    public abstract val portion: Portion
+    public abstract val foodEnergy: Energy
+    public abstract val nutrients: NutritionMap
     public operator fun get(nutrientType: NutrientType): Mass? = nutrients[nutrientType]
+
+    override fun toString(): String = "FoodNutrition(portion=$portion, foodEnergy=$foodEnergy, nutrients=$nutrients)"
+    override fun equals(other: Any?): Boolean {
+        if (other !is FoodNutrition || portion != other.portion || foodEnergy != other.foodEnergy)
+            return false
+
+        val otherEntries = other.nutrients.entries
+        val entries = nutrients.entries
+        return ((entries - otherEntries) + (otherEntries - entries)).isEmpty()
+    }
+
+    override fun hashCode(): Int {
+        var result = portion.hashCode()
+        result = 31 * result + foodEnergy.hashCode()
+        result = 31 * result + nutrients.hashCode()
+        return result
+    }
 
     public companion object {
         public operator fun invoke(
@@ -25,10 +43,11 @@ public sealed interface FoodNutrition {
 }
 
 internal data class FoodNutritionMapImpl(
+internal class FoodNutritionMapImpl(
     override val portion: Portion,
     override val foodEnergy: Energy,
     override val nutrients: NutritionMap,
-) : FoodNutrition {}
+) : FoodNutrition()
 
 /**
  * Mirrors copy() of a `data class`
