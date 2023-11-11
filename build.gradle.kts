@@ -16,6 +16,7 @@ val dokkaHtmlMultiModule = tasks.dokkaHtmlMultiModule
 
 dokkaHtmlMultiModule {
     outputDirectory = rootProject.layout.projectDirectory.dir("docs/documentation")
+    includes.from("Module.md")
 }
 
 tasks.withType<PublishToMavenRepository>().configureEach {
