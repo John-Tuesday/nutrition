@@ -120,27 +120,164 @@ public fun Nutrient(nutrientType: NutrientType, mass: Mass): Nutrient =
  */
 public operator fun NutrientType.invoke(mass: Mass): Nutrient = Nutrient(nutrientType = this, mass = mass)
 
-public val FoodNutrition.protein: Mass? get() = get(NutrientType.Protein)
-public val FoodNutrition.totalCarbohydrate: Mass? get() = get(NutrientType.TotalCarbohydrate)
-public val FoodNutrition.fiber: Mass? get() = get(NutrientType.Fiber)
-public val FoodNutrition.sugar: Mass? get() = get(NutrientType.Sugar)
-public val FoodNutrition.sugarAlcohol: Mass? get() = get(NutrientType.SugarAlcohol)
-public val FoodNutrition.starch: Mass? get() = get(NutrientType.Starch)
-public val FoodNutrition.totalFat: Mass? get() = get(NutrientType.TotalFat)
-public val FoodNutrition.monounsaturatedFat: Mass? get() = get(NutrientType.MonounsaturatedFat)
-public val FoodNutrition.polyunsaturatedFat: Mass? get() = get(NutrientType.PolyunsaturatedFat)
-public val FoodNutrition.omega3: Mass? get() = get(NutrientType.Omega3)
-public val FoodNutrition.omega6: Mass? get() = get(NutrientType.Omega6)
-public val FoodNutrition.saturatedFat: Mass? get() = get(NutrientType.SaturatedFat)
-public val FoodNutrition.transFat: Mass? get() = get(NutrientType.TransFat)
-public val FoodNutrition.cholesterol: Mass? get() = get(NutrientType.Cholesterol)
-public val FoodNutrition.calcium: Mass? get() = get(NutrientType.Calcium)
-public val FoodNutrition.chloride: Mass? get() = get(NutrientType.Chloride)
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.protein: Mass? get() = nutrients[NutrientType.Protein]
 
-public val FoodNutrition.iron: Mass? get() = get(NutrientType.Iron)
-public val FoodNutrition.magnesium: Mass? get() = get(NutrientType.Magnesium)
-public val FoodNutrition.phosphorous: Mass? get() = get(NutrientType.Phosphorous)
-public val FoodNutrition.potassium: Mass? get() = get(NutrientType.Potassium)
-public val FoodNutrition.sodium: Mass? get() = get(NutrientType.Sodium)
-public val FoodNutrition.vitaminA: Mass? get() = get(NutrientType.VitaminA)
-public val FoodNutrition.vitaminC: Mass? get() = get(NutrientType.VitaminC)
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.totalCarbohydrate: Mass? get() = nutrients[NutrientType.TotalCarbohydrate]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.fiber: Mass? get() = nutrients[NutrientType.Fiber]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.sugar: Mass? get() = nutrients[NutrientType.Sugar]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.sugarAlcohol: Mass? get() = nutrients[NutrientType.SugarAlcohol]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.starch: Mass? get() = nutrients[NutrientType.Starch]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.totalFat: Mass? get() = nutrients[NutrientType.TotalFat]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.monounsaturatedFat: Mass? get() = nutrients[NutrientType.MonounsaturatedFat]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.polyunsaturatedFat: Mass? get() = nutrients[NutrientType.PolyunsaturatedFat]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.omega3: Mass? get() = nutrients[NutrientType.Omega3]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.omega6: Mass? get() = nutrients[NutrientType.Omega6]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.saturatedFat: Mass? get() = nutrients[NutrientType.SaturatedFat]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.transFat: Mass? get() = nutrients[NutrientType.TransFat]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.cholesterol: Mass? get() = nutrients[NutrientType.Cholesterol]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.calcium: Mass? get() = nutrients[NutrientType.Calcium]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.chloride: Mass? get() = nutrients[NutrientType.Chloride]
+
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.iron: Mass? get() = nutrients[NutrientType.Iron]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.magnesium: Mass? get() = nutrients[NutrientType.Magnesium]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.phosphorous: Mass? get() = nutrients[NutrientType.Phosphorous]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.potassium: Mass? get() = nutrients[NutrientType.Potassium]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.sodium: Mass? get() = nutrients[NutrientType.Sodium]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.vitaminA: Mass? get() = nutrients[NutrientType.VitaminA]
+
+@Deprecated(
+    message = "Will be removed in 0.2.0",
+    replaceWith = ReplaceWith("FoodNutrition.nutrients.get()"),
+    level = DeprecationLevel.WARNING,
+)
+public val FoodNutrition.vitaminC: Mass? get() = nutrients[NutrientType.VitaminC]
