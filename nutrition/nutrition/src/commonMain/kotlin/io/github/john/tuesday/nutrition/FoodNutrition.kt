@@ -2,16 +2,34 @@ package io.github.john.tuesday.nutrition
 
 import io.github.john.tuesday.measurement.*
 
+/**
+ * [NutrientType] to [Mass] map used in [FoodNutrition]
+ */
 public typealias NutritionMap = Map<NutrientType, Mass>
 
 /**
  * Nutritional facts about something
  */
 public sealed class FoodNutrition {
+    /**
+     * Amount of food being described by this class
+     */
     public abstract val portion: Portion
+
+    /**
+     * Total human-digestible energy from the described food
+     */
     public abstract val foodEnergy: Energy
+
+    /**
+     * All the nutrients mapped to their weights. 0 means present but near 0 and `null` means absent or no information.
+     * This is to mirror how Nutrition Facts in the US describe nutrient content
+     */
     public abstract val nutrients: NutritionMap
 
+    /**
+     * Convenience function for `this.nutrients.get(...)`
+     */
     @Deprecated(
         message = "This is a near useless function. Will be removed in 0.2.0",
         replaceWith = ReplaceWith("FoodNutrition.nutrients.get(...)"),
