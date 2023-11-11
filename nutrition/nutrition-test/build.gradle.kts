@@ -1,6 +1,8 @@
 import io.github.john.tuesday.nutrition.MavenGroupId
 import io.github.john.tuesday.nutrition.MavenVersion
 import io.github.john.tuesday.nutrition.NutritionTestRepo
+import org.jetbrains.dokka.gradle.DokkaTaskPartial
+import java.net.URL
 
 plugins {
     id("nutrition.kotlin.library.multiplatform")
@@ -10,6 +12,19 @@ plugins {
 
 group = MavenGroupId
 version = MavenVersion
+
+tasks.withType<DokkaTaskPartial>().configureEach {
+    dokkaSourceSets.configureEach {
+        includes.from("Module.md")
+        reportUndocumented = true
+
+        sourceLink {
+            localDirectory = projectDir.resolve("src")
+            remoteUrl = URL("${NutritionTestRepo.documentationBaseUrl}/src")
+            remoteLineSuffix = "#L"
+        }
+    }
+}
 
 publishing {
     publications.withType<MavenPublication>().configureEach {
