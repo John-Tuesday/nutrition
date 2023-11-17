@@ -1,6 +1,7 @@
 [versions]
 android = "8.1.2"
 dokka = "1.9.10"
+dokkaConvention = "0.0.0-SNAPSHOT"
 junit = "5.10.0"
 junitPlatform = "1.10.0"
 kotlin = "1.9.20"
@@ -23,6 +24,7 @@ maven-publish-assist-gradlePlugin = { module = "io.github.john-tuesday.maven-pub
 
 [plugins]
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+dokka-convention-html = { id = "io.github.john-tuesday.dokka-html", version.ref = "dokkaConvention" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 maven-publish-assist = { id = "io.github.john-tuesday.maven-publish-assist", version.ref = "mavenPublishAssist" }
 
