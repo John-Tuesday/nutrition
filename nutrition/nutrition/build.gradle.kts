@@ -1,29 +1,19 @@
 import io.github.john.tuesday.nutrition.MavenGroupId
 import io.github.john.tuesday.nutrition.MavenVersion
 import io.github.john.tuesday.nutrition.NutritionRepo
-import org.jetbrains.dokka.gradle.DokkaTaskPartial
-import java.net.URL
 
 plugins {
     id("nutrition.kotlin.library.multiplatform")
     id("nutrition.maven.publication")
-    alias(libs.plugins.dokka)
+    alias(libs.plugins.dokka.convention.html)
 }
 
 group = MavenGroupId
 version = MavenVersion
 
-tasks.withType<DokkaTaskPartial>().configureEach {
-    dokkaSourceSets.configureEach {
-        includes.from("Module.md")
-        reportUndocumented = true
-
-        sourceLink {
-            localDirectory = project.layout.projectDirectory.file("src").asFile
-            remoteUrl = URL("${NutritionRepo.documentationBaseUrl}/src")
-            remoteLineSuffix = "#L"
-        }
-    }
+repositoryDocumentation {
+    documentationBaseUrl = NutritionRepo.documentationBaseUrl
+    reportUndocumented = true
 }
 
 publishing {
