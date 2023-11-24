@@ -11,11 +11,6 @@ plugins {
 group = MavenGroupId
 version = MavenVersion
 
-repositoryDocumentation {
-    documentationBaseUrl = NutritionTestRepo.documentationBaseUrl
-    reportUndocumented = true
-}
-
 publishing {
     publications.withType<MavenPublication>().configureEach {
         pom.name = NutritionTestRepo.name
