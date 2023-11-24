@@ -33,6 +33,9 @@ jobs:
             cache: 'gradle'
 
       - name: Gradle check task
+        env:
+          USERNAME: 'John-Tuesday'
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./gradlew check --no-daemon
 
       # Runs a set of commands using the runners shell
