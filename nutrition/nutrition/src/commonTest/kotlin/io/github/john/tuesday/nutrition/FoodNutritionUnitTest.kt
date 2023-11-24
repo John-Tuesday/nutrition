@@ -46,7 +46,7 @@ class FoodNutritionUnitTest {
             assertEquals(-base.foodEnergy, actual.foodEnergy)
             assertContentEquals(base.nutrients.keys, actual.nutrients.keys.asIterable())
             for ((type, mass) in base.nutrients)
-                assertEquals(-mass, actual[type])
+                assertEquals(-mass, actual.nutrients[type])
         }
         check(one)
         assertTrue {
