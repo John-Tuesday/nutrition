@@ -4,7 +4,7 @@ dokka = "1.9.10"
 dokkaConvention = "0.0.0-SNAPSHOT"
 junit = "5.10.0"
 junitPlatform = "1.10.0"
-kotlin = "1.9.20"
+kotlin = "1.9.21"
 measure = "2.0.0-alpha02"
 mavenPublishAssist = "0.1.0-SNAPSHOT"
 
