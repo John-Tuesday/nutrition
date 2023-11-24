@@ -36,6 +36,8 @@ jobs:
         env:
           USERNAME: 'John-Tuesday'
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ossrhUsername: ${{ secrets.OSSR_USERNAME }}
+          ossrhPassword: ${{ secrets.OSSR_PASSWORD }}
         run: ./gradlew check --no-daemon
 
       # Runs a set of commands using the runners shell
