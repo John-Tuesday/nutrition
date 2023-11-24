@@ -9,18 +9,42 @@ import io.github.john.tuesday.measurement.*
  * measured in [Mass] or [Volume] (exclusive)
  */
 public sealed class Portion {
+    /**
+     * Portion in terms of mass when not null.
+     *
+     * This value is mutually exclusive with [volume]. If [mass] is `null`, then [volume] must not be `null` and vice versa.
+     */
     public abstract val mass: Mass?
+
+    /**
+     * Portion in terms of volume when not null.
+     *
+     * This value is mutually exclusive with [mass]. If [volume] is `null`, then [mass] must not be `null` and vice versa.
+     */
     public abstract val volume: Volume?
 
+    /**
+     * Return this a string representation of this object
+     */
     override fun toString(): String = "Portion(mass=$mass, volume=$volume)"
 
+    /**
+     * Returns true if and only if [other] is of type [Portion] and has equal [mass] and [volume]
+     */
     override fun equals(other: Any?): Boolean = other is Portion && mass == other.mass && volume == other.volume
+
+    /**
+     * Returns the hashcode of the object
+     */
     override fun hashCode(): Int {
         var result = mass?.hashCode() ?: 0
         result = 31 * result + (volume?.hashCode() ?: 0)
         return result
     }
 
+    /**
+     * Companion object for extensibility
+     */
     public companion object
 }
 
@@ -52,8 +76,14 @@ public sealed class MassPortion : Portion(), Comparable<MassPortion> {
     final override val volume: Volume? = null
     abstract override val mass: Mass
 
+    /**
+     * Compares this [mass] to the [mass] of [other]
+     */
     override fun compareTo(other: MassPortion): Int = mass.compareTo(other.mass)
 
+    /**
+     * Companion object for extensibility
+     */
     public companion object
 }
 
@@ -71,8 +101,14 @@ public sealed class VolumePortion : Portion(), Comparable<VolumePortion> {
     final override val mass: Mass? = null
     abstract override val volume: Volume
 
+    /**
+     * Compares this [volume] to the [volume] of [other]
+     */
     override fun compareTo(other: VolumePortion): Int = volume.compareTo(other.volume)
 
+    /**
+     * Companion object for extensibility
+     */
     public companion object
 }
 

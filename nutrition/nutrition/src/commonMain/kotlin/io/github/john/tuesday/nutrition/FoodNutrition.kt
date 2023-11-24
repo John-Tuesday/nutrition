@@ -37,7 +37,16 @@ public sealed class FoodNutrition {
     )
     public operator fun get(nutrientType: NutrientType): Mass? = nutrients[nutrientType]
 
+    /**
+     * Return a string representation of this object
+     */
     override fun toString(): String = "FoodNutrition(portion=$portion, foodEnergy=$foodEnergy, nutrients=$nutrients)"
+
+    /**
+     * Returns true if and only if [other] is [FoodNutrition] with equal [portion], [foodEnergy], and [nutrients].
+     *
+     * [nutrients] is compared by is contents.
+     */
     override fun equals(other: Any?): Boolean {
         if (other !is FoodNutrition || portion != other.portion || foodEnergy != other.foodEnergy)
             return false
@@ -47,6 +56,9 @@ public sealed class FoodNutrition {
         return ((entries - otherEntries) + (otherEntries - entries)).isEmpty()
     }
 
+    /**
+     * Returns a hash code value for the object.
+     */
     override fun hashCode(): Int {
         var result = portion.hashCode()
         result = 31 * result + foodEnergy.hashCode()
@@ -54,6 +66,9 @@ public sealed class FoodNutrition {
         return result
     }
 
+    /**
+     * Companion object for extensibility
+     */
     public companion object
 }
 
