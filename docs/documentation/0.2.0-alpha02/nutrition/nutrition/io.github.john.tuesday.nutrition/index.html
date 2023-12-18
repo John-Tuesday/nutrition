@@ -1,0 +1,892 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>io.github.john.tuesday.nutrition</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            nutrition
+                    </a>            </div>
+            <div class="library-version">
+<dokka-template-command data="{&quot;@class&quot;:&quot;org.jetbrains.dokka.base.templating.ReplaceVersionsCommand&quot;,&quot;location&quot;:&quot;io.github.john.tuesday.nutrition/index.html&quot;}"><div class="versions-dropdown">
+  <div class="versions-dropdown-button">0.2.0-alpha02</div>
+  <div class="versions-dropdown-data"><a href="index.html">0.2.0-alpha02</a><a href="../../../older/0.2.0-alpha01/nutrition/nutrition/io.github.john.tuesday.nutrition/index.html">0.2.0-alpha01</a></div>
+</div>
+</dokka-template-command>            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":nutrition:nutrition:dokkaHtmlPartial/commonMain">common</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageids="nutrition::io.github.john.tuesday.nutrition////PointingToDeclaration//1059972719">
+  <div class="breadcrumbs"><a href="../index.html">nutrition</a><span class="delimiter">/</span><span class="current">io.github.john.tuesday.nutrition</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><p class="paragraph">Provides core nutrition classes and operations</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button><button class="section-tab" data-togglable="PROPERTY,EXTENSION_PROPERTY">Properties</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1783381263%2FClasslikes%2F1059972719" anchor-label="FoodNutrition" id="1783381263%2FClasslikes%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-food-nutrition/index.html"><span>Food</span><wbr><span><span>Nutrition</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1783381263%2FClasslikes%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-food-nutrition/index.html">FoodNutrition</a></div><div class="brief "><p class="paragraph">Nutritional facts about something</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="200688566%2FClasslikes%2F1059972719" anchor-label="MassPortion" id="200688566%2FClasslikes%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mass-portion/index.html"><span>Mass</span><wbr><span><span>Portion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="200688566%2FClasslikes%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-mass-portion/index.html">MassPortion</a> : <a href="-portion/index.html">Portion</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html">Comparable</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-mass-portion/index.html">MassPortion</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Portion of food measured in <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2124269494%2FClasslikes%2F1059972719" anchor-label="MismatchPortionError" id="-2124269494%2FClasslikes%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mismatch-portion-error/index.html"><span>Mismatch</span><wbr><span>Portion</span><wbr><span><span>Error</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2124269494%2FClasslikes%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">class </span><a href="-mismatch-portion-error/index.html">MismatchPortionError</a> : <a href="-nutrition-error/index.html">NutritionError</a></div><div class="brief "><p class="paragraph">Logical error when trying to perform an operation with two <a href="-portion/index.html">Portion</a> of incompatible type; that is to say, attempting to perform an operation with a <a href="-mass-portion/index.html">MassPortion</a> and a <a href="-volume-portion/index.html">VolumePortion</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-431810894%2FClasslikes%2F1059972719" anchor-label="Nutrient" id="-431810894%2FClasslikes%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-nutrient/index.html"><span><span>Nutrient</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-431810894%2FClasslikes%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-nutrient/index.html">Nutrient</a></div><div class="brief "><p class="paragraph">Specific amount of <a href="-nutrient-type/index.html">NutrientType</a> in <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-823082412%2FClasslikes%2F1059972719" anchor-label="NutrientCategory" id="-823082412%2FClasslikes%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-nutrient-category/index.html"><span>Nutrient</span><wbr><span><span>Category</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-823082412%2FClasslikes%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-nutrient-category/index.html">NutrientCategory</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-nutrient-category/index.html">NutrientCategory</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Macro category of <a href="-nutrient-type/index.html">NutrientType</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1036680168%2FClasslikes%2F1059972719" anchor-label="NutrientType" id="-1036680168%2FClasslikes%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-nutrient-type/index.html"><span>Nutrient</span><wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1036680168%2FClasslikes%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-nutrient-type/index.html">NutrientType</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-nutrient-type/index.html">NutrientType</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Nutrient type with a specified <a href="-nutrient-type/category.html">category</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1986911383%2FClasslikes%2F1059972719" anchor-label="NutritionError" id="-1986911383%2FClasslikes%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-nutrition-error/index.html"><span>Nutrition</span><wbr><span><span>Error</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1986911383%2FClasslikes%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-nutrition-error/index.html">NutritionError</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html">Throwable</a></div><div class="brief "><p class="paragraph">Base error type for all <span data-unresolved-link="////PointingToDeclaration/">io.github.john.tuesday.nutrition</span></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-672889195%2FClasslikes%2F1059972719" anchor-label="NutritionMap" id="-672889195%2FClasslikes%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-nutrition-map/index.html"><span>Nutrition</span><wbr><span><span>Map</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-672889195%2FClasslikes%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">typealias </span><a href="-nutrition-map/index.html">NutritionMap</a><span class="token operator"> = </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-nutrient-type/index.html">NutrientType</a><span class="token punctuation">, </span><span class="token keyword"></span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph"><a href="-nutrient-type/index.html">NutrientType</a> to <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> map used in <a href="-food-nutrition/index.html">FoodNutrition</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="547423394%2FClasslikes%2F1059972719" anchor-label="Portion" id="547423394%2FClasslikes%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-portion/index.html"><span><span>Portion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="547423394%2FClasslikes%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-portion/index.html">Portion</a></div><div class="brief "><p class="paragraph">Portion of food, serving size</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="554225116%2FClasslikes%2F1059972719" anchor-label="VolumePortion" id="554225116%2FClasslikes%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-volume-portion/index.html"><span>Volume</span><wbr><span><span>Portion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="554225116%2FClasslikes%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">class </span><a href="-volume-portion/index.html">VolumePortion</a> : <a href="-portion/index.html">Portion</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html">Comparable</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-volume-portion/index.html">VolumePortion</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Portion of food measured in <span data-unresolved-link="io.github.john.tuesday.measurement/Volume///PointingToDeclaration/">Volume</span></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="EXTENSION_PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="864328664%2FProperties%2F1059972719" anchor-label="absoluteValue" id="864328664%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="absolute-value.html"><span>absolute</span><wbr><span><span>Value</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="864328664%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-mass-portion/index.html">MassPortion</a><span class="token punctuation">.</span><a href="absolute-value.html">absoluteValue</a><span class="token operator">: </span><a href="-mass-portion/index.html">MassPortion</a></div><div class="brief "><p class="paragraph">Return <a href="-mass-portion/index.html">MassPortion</a> with positive <a href="-mass-portion/mass.html">MassPortion.mass</a></p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-portion/index.html">Portion</a><span class="token punctuation">.</span><a href="absolute-value.html">absoluteValue</a><span class="token operator">: </span><a href="-portion/index.html">Portion</a></div><div class="brief "><p class="paragraph">Return <a href="-portion/index.html">Portion</a> with positive <a href="-portion/mass.html">Portion.mass</a> or <a href="-portion/volume.html">Portion.volume</a>. The other stays <code class="lang-kotlin">null</code></p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-volume-portion/index.html">VolumePortion</a><span class="token punctuation">.</span><a href="absolute-value.html">absoluteValue</a><span class="token operator">: </span><a href="-volume-portion/index.html">VolumePortion</a></div><div class="brief "><p class="paragraph">Return <a href="-volume-portion/index.html">VolumePortion</a> with positive <a href="-volume-portion/volume.html">VolumePortion.volume</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1983429365%2FProperties%2F1059972719" anchor-label="calcium" id="-1983429365%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="calcium.html"><span><span>calcium</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1983429365%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="calcium.html"><strike>calcium</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1661491991%2FProperties%2F1059972719" anchor-label="chloride" id="-1661491991%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="chloride.html"><span><span>chloride</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1661491991%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="chloride.html"><strike>chloride</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="773433097%2FProperties%2F1059972719" anchor-label="cholesterol" id="773433097%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="cholesterol.html"><span><span>cholesterol</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="773433097%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="cholesterol.html"><strike>cholesterol</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1537128491%2FProperties%2F1059972719" anchor-label="fiber" id="1537128491%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="fiber.html"><span><span>fiber</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1537128491%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="fiber.html"><strike>fiber</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1093727935%2FProperties%2F1059972719" anchor-label="iron" id="-1093727935%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="iron.html"><span><span>iron</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1093727935%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="iron.html"><strike>iron</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1069758303%2FProperties%2F1059972719" anchor-label="magnesium" id="1069758303%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="magnesium.html"><span><span>magnesium</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1069758303%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="magnesium.html"><strike>magnesium</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="847745353%2FProperties%2F1059972719" anchor-label="monounsaturatedFat" id="847745353%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="monounsaturated-fat.html"><span>monounsaturated</span><wbr><span><span>Fat</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="847745353%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="monounsaturated-fat.html"><strike>monounsaturatedFat</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-558860905%2FProperties%2F1059972719" anchor-label="omega3" id="-558860905%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="omega3.html"><span><span>omega3</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-558860905%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="omega3.html"><strike>omega3</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1703973940%2FProperties%2F1059972719" anchor-label="omega6" id="1703973940%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="omega6.html"><span><span>omega6</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1703973940%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="omega6.html"><strike>omega6</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="164431457%2FProperties%2F1059972719" anchor-label="phosphorous" id="164431457%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="phosphorous.html"><span><span>phosphorous</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="164431457%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="phosphorous.html"><strike>phosphorous</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-925018112%2FProperties%2F1059972719" anchor-label="polyunsaturatedFat" id="-925018112%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="polyunsaturated-fat.html"><span>polyunsaturated</span><wbr><span><span>Fat</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-925018112%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="polyunsaturated-fat.html"><strike>polyunsaturatedFat</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="364051522%2FProperties%2F1059972719" anchor-label="potassium" id="364051522%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="potassium.html"><span><span>potassium</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="364051522%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="potassium.html"><strike>potassium</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-715314188%2FProperties%2F1059972719" anchor-label="protein" id="-715314188%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="protein.html"><span><span>protein</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-715314188%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="protein.html"><strike>protein</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="662018629%2FProperties%2F1059972719" anchor-label="saturatedFat" id="662018629%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="saturated-fat.html"><span>saturated</span><wbr><span><span>Fat</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="662018629%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="saturated-fat.html"><strike>saturatedFat</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2032638064%2FProperties%2F1059972719" anchor-label="sodium" id="2032638064%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="sodium.html"><span><span>sodium</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2032638064%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="sodium.html"><strike>sodium</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1942096206%2FProperties%2F1059972719" anchor-label="starch" id="-1942096206%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="starch.html"><span><span>starch</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1942096206%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="starch.html"><strike>starch</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1963243359%2FProperties%2F1059972719" anchor-label="sugar" id="-1963243359%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="sugar.html"><span><span>sugar</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1963243359%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="sugar.html"><strike>sugar</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-249170415%2FProperties%2F1059972719" anchor-label="sugarAlcohol" id="-249170415%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="sugar-alcohol.html"><span>sugar</span><wbr><span><span>Alcohol</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-249170415%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="sugar-alcohol.html"><strike>sugarAlcohol</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="908285793%2FProperties%2F1059972719" anchor-label="totalCarbohydrate" id="908285793%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="total-carbohydrate.html"><span>total</span><wbr><span><span>Carbohydrate</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="908285793%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="total-carbohydrate.html"><strike>totalCarbohydrate</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1466092620%2FProperties%2F1059972719" anchor-label="totalFat" id="-1466092620%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="total-fat.html"><span>total</span><wbr><span><span>Fat</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1466092620%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="total-fat.html"><strike>totalFat</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1455538664%2FProperties%2F1059972719" anchor-label="transFat" id="-1455538664%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="trans-fat.html"><span>trans</span><wbr><span><span>Fat</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1455538664%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="trans-fat.html"><strike>transFat</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="415234842%2FProperties%2F1059972719" anchor-label="vitaminA" id="415234842%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="vitamin-a.html"><span>vitamin</span><wbr><span><span>A</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="415234842%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="vitamin-a.html"><strike>vitaminA</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="492135640%2FProperties%2F1059972719" anchor-label="vitaminC" id="492135640%2FProperties%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_PROPERTY" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="vitamin-c.html"><span>vitamin</span><wbr><span><span>C</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="492135640%2FProperties%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="vitamin-c.html"><strike>vitaminC</strike></a><span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Convenience function for retrieving the <span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span> (or null if not present) of the nutrient with the same name</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-539213940%2FFunctions%2F1059972719" anchor-label="allCarbohydrates" id="-539213940%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="all-carbohydrates.html"><span>all</span><wbr><span><span>Carbohydrates</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-539213940%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-nutrient-type/-companion/index.html">NutrientType.Companion</a><span class="token punctuation">.</span><a href="all-carbohydrates.html"><span class="token function">allCarbohydrates</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-nutrient-type/index.html">NutrientType</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">All <a href="-nutrient-type/index.html">NutrientType</a> with <a href="-nutrient-type/category.html">NutrientType.category</a> equal to <a href="-nutrient-category/-carbohydrate/index.html">NutrientCategory.Carbohydrate</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="391702457%2FFunctions%2F1059972719" anchor-label="allFats" id="391702457%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="all-fats.html"><span>all</span><wbr><span><span>Fats</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="391702457%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-nutrient-type/-companion/index.html">NutrientType.Companion</a><span class="token punctuation">.</span><a href="all-fats.html"><span class="token function">allFats</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-nutrient-type/index.html">NutrientType</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">All <a href="-nutrient-type/index.html">NutrientType</a> with <a href="-nutrient-type/category.html">NutrientType.category</a> equal to <a href="-nutrient-category/-fat/index.html">NutrientCategory.Fat</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-114404600%2FFunctions%2F1059972719" anchor-label="allMinerals" id="-114404600%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="all-minerals.html"><span>all</span><wbr><span><span>Minerals</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-114404600%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-nutrient-type/-companion/index.html">NutrientType.Companion</a><span class="token punctuation">.</span><a href="all-minerals.html"><span class="token function">allMinerals</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-nutrient-type/index.html">NutrientType</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">All <a href="-nutrient-type/index.html">NutrientType</a> with <a href="-nutrient-type/category.html">NutrientType.category</a> equal to <a href="-nutrient-category/-mineral/index.html">NutrientCategory.Mineral</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1639761152%2FFunctions%2F1059972719" anchor-label="allVitamins" id="1639761152%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="all-vitamins.html"><span>all</span><wbr><span><span>Vitamins</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1639761152%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-nutrient-type/-companion/index.html">NutrientType.Companion</a><span class="token punctuation">.</span><a href="all-vitamins.html"><span class="token function">allVitamins</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-nutrient-type/index.html">NutrientType</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">All <a href="-nutrient-type/index.html">NutrientType</a> with <a href="-nutrient-type/category.html">NutrientType.category</a> equal to <a href="-nutrient-category/-vitamin/index.html">NutrientCategory.Vitamin</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1833049104%2FFunctions%2F1059972719" anchor-label="div" id="1833049104%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="div.html"><span><span>div</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1833049104%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-mass-portion/index.html">MassPortion</a><span class="token punctuation">.</span><a href="div.html"><span class="token function">div</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="-mass-portion/index.html">MassPortion</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-portion/index.html">Portion</a><span class="token punctuation">.</span><a href="div.html"><span class="token function">div</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="-portion/index.html">Portion</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-volume-portion/index.html">VolumePortion</a><span class="token punctuation">.</span><a href="div.html"><span class="token function">div</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="-volume-portion/index.html">VolumePortion</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></div><div class="brief "><p class="paragraph">Find the ratio between <code class="lang-kotlin">this</code> to <a href="div.html">other</a></p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-mass-portion/index.html">MassPortion</a><span class="token punctuation">.</span><a href="div.html"><span class="token function">div</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">number<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/index.html">Number</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mass-portion/index.html">MassPortion</a></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-portion/index.html">Portion</a><span class="token punctuation">.</span><a href="div.html"><span class="token function">div</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">number<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/index.html">Number</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-portion/index.html">Portion</a></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-volume-portion/index.html">VolumePortion</a><span class="token punctuation">.</span><a href="div.html"><span class="token function">div</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">number<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/index.html">Number</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-volume-portion/index.html">VolumePortion</a></div><div class="brief "><p class="paragraph">Shrinks <code class="lang-kotlin">this</code> by <a href="div.html">number</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1078788252%2FFunctions%2F1059972719" anchor-label="fold" id="1078788252%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="fold.html"><span><span>fold</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1078788252%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="fold.html">T</a><span class="token operator">&gt; </span><a href="-portion/index.html">Portion</a><span class="token punctuation">.</span><a href="fold.html"><span class="token function">fold</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">onMassPortion<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="fold.html">T</a><span class="token punctuation">, </span></span><span class="parameter ">onVolumePortion<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><span data-unresolved-link="io.github.john.tuesday.measurement/Volume///PointingToDeclaration/">Volume</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="fold.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="fold.html">T</a></div><div class="brief "><p class="paragraph">Fold <code class="lang-kotlin">this</code> to a single value <a href="fold.html">T</a> by calling <a href="fold.html">onMassPortion</a> if <code class="lang-kotlin">this</code> is <a href="-mass-portion/index.html">MassPortion</a> and <a href="fold.html">onVolumePortion</a> if <code class="lang-kotlin">this</code> is <a href="-volume-portion/index.html">VolumePortion</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="299058534%2FFunctions%2F1059972719" anchor-label="FoodNutrition" id="299058534%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-food-nutrition.html"><span>Food</span><wbr><span><span>Nutrition</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="299058534%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-food-nutrition.html"><span class="token function">FoodNutrition</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">portion<span class="token operator">: </span><a href="-portion/index.html">Portion</a><span class="token punctuation">, </span></span><span class="parameter ">foodEnergy<span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Energy///PointingToDeclaration/">Energy</span><span class="token operator"> = </span>0.kilocalories<span class="token punctuation">, </span></span><span class="parameter ">nutrients<span class="token operator">: </span><a href="-nutrition-map/index.html">NutritionMap</a><span class="token operator"> = </span>mapOf()</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-food-nutrition/index.html">FoodNutrition</a></div><div class="brief "><p class="paragraph">Create a new <a href="-food-nutrition/index.html">FoodNutrition</a> with matching <a href="-food-nutrition.html">portion</a>, <a href="-food-nutrition.html">foodEnergy</a>, and <a href="-food-nutrition.html">nutrients</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="982761045%2FFunctions%2F1059972719" anchor-label="invoke" id="982761045%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="invoke.html"><span><span>invoke</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="982761045%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-nutrient-type/index.html">NutrientType</a><span class="token punctuation">.</span><a href="invoke.html"><span class="token function">invoke</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">mass<span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-nutrient/index.html">Nutrient</a></div><div class="brief "><p class="paragraph">Create a <a href="-nutrient/index.html">Nutrient</a> whose <a href="-nutrient/nutrient-type.html">Nutrient.nutrientType</a> is <code class="lang-kotlin">this</code> and <a href="-nutrient/mass.html">Nutrient.mass</a> is <a href="invoke.html">mass</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2144975499%2FFunctions%2F1059972719" anchor-label="makeNutrient" id="-2144975499%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="make-nutrient.html"><span>make</span><wbr><span><span>Nutrient</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2144975499%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="make-nutrient.html"><span class="token function"><strike>makeNutrient</strike></span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">nutrientType<span class="token operator">: </span><a href="-nutrient-type/index.html">NutrientType</a><span class="token punctuation">, </span></span><span class="parameter ">mass<span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-nutrient/index.html">Nutrient</a></div><div class="brief "><p class="paragraph">Construct a <a href="-nutrient/index.html">Nutrient</a> with <a href="make-nutrient.html">nutrientType</a> and <a href="make-nutrient.html">mass</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-90700806%2FFunctions%2F1059972719" anchor-label="MassPortion" id="-90700806%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-mass-portion.html"><span>Mass</span><wbr><span><span>Portion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-90700806%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-mass-portion.html"><span class="token function">MassPortion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">mass<span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span><span class="token operator"> = </span>0.grams</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mass-portion/index.html">MassPortion</a></div><div class="brief "><p class="paragraph">Create a <a href="-mass-portion/index.html">MassPortion</a> with <a href="-mass-portion.html">mass</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1966093933%2FFunctions%2F1059972719" anchor-label="minus" id="1966093933%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="minus.html"><span><span>minus</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1966093933%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="minus.html"><span class="token function">minus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="-food-nutrition/index.html">FoodNutrition</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-food-nutrition/index.html">FoodNutrition</a></div><div class="brief "><p class="paragraph">New <a href="-food-nutrition/index.html">FoodNutrition</a> with each property reduced by the respective property in <a href="minus.html">other</a></p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="minus.html"><span class="token function">minus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">nutrient<span class="token operator">: </span><a href="-nutrient/index.html">Nutrient</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-food-nutrition/index.html">FoodNutrition</a></div><div class="brief "><p class="paragraph">New <a href="-food-nutrition/index.html">FoodNutrition</a> but with <a href="minus.html">nutrient</a> subtracted from the existing value or insert the negative</p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-mass-portion/index.html">MassPortion</a><span class="token punctuation">.</span><a href="minus.html"><span class="token function">minus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="-mass-portion/index.html">MassPortion</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mass-portion/index.html">MassPortion</a></div><div class="brief "><p class="paragraph">Create a <a href="-mass-portion/index.html">MassPortion</a> with mass equal to <code class="lang-kotlin">this.mass - other.mass</code></p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-portion/index.html">Portion</a><span class="token punctuation">.</span><a href="minus.html"><span class="token function">minus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="-portion/index.html">Portion</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-portion/index.html">Portion</a></div><div class="brief "><p class="paragraph">Create a <a href="-portion/index.html">Portion</a> whose volume or mass is equal to <code class="lang-kotlin">this</code> subtracted by <a href="minus.html">other</a>. <code class="lang-kotlin">this</code> and <a href="minus.html">other</a> should both be defined in the same measurement type; specifically, both are <a href="-mass-portion/index.html">MassPortion</a> or both are <a href="-volume-portion/index.html">VolumePortion</a></p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-volume-portion/index.html">VolumePortion</a><span class="token punctuation">.</span><a href="minus.html"><span class="token function">minus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="-volume-portion/index.html">VolumePortion</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-volume-portion/index.html">VolumePortion</a></div><div class="brief "><p class="paragraph">Create a <a href="-volume-portion/index.html">VolumePortion</a> with volume equal to <code class="lang-kotlin">this.volume - other.volume</code></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="287002191%2FFunctions%2F1059972719" anchor-label="mutate" id="287002191%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="mutate.html"><span><span>mutate</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="287002191%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="mutate.html"><span class="token function">mutate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">portion<span class="token operator">: </span><a href="-portion/index.html">Portion</a><span class="token operator"> = </span>this.portion<span class="token punctuation">, </span></span><span class="parameter ">foodEnergy<span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Energy///PointingToDeclaration/">Energy</span><span class="token operator"> = </span>this.foodEnergy<span class="token punctuation">, </span></span><span class="parameter ">nutritionMap<span class="token operator">: </span><a href="-nutrition-map/index.html">NutritionMap</a><span class="token operator"> = </span>this.nutrients</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-food-nutrition/index.html">FoodNutrition</a></div><div class="brief "><p class="paragraph">Mirrors copy() of a <code class="lang-kotlin">data class</code></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="166449543%2FFunctions%2F1059972719" anchor-label="Nutrient" id="166449543%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-nutrient.html"><span><span>Nutrient</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="166449543%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-nutrient.html"><span class="token function">Nutrient</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">nutrientType<span class="token operator">: </span><a href="-nutrient-type/index.html">NutrientType</a><span class="token punctuation">, </span></span><span class="parameter ">mass<span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-nutrient/index.html">Nutrient</a></div><div class="brief "><p class="paragraph">Create a <a href="-nutrient/index.html">Nutrient</a> with matching <a href="-nutrient.html">nutrientType</a> and <a href="-nutrient.html">mass</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1143439555%2FFunctions%2F1059972719" anchor-label="plus" id="1143439555%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="plus.html"><span><span>plus</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1143439555%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="plus.html"><span class="token function">plus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="-food-nutrition/index.html">FoodNutrition</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-food-nutrition/index.html">FoodNutrition</a></div><div class="brief "><p class="paragraph">New <a href="-food-nutrition/index.html">FoodNutrition</a> with each property increased by the respective property in <a href="plus.html">other</a></p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="plus.html"><span class="token function">plus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">nutrient<span class="token operator">: </span><a href="-nutrient/index.html">Nutrient</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-food-nutrition/index.html">FoodNutrition</a></div><div class="brief "><p class="paragraph">New <a href="-food-nutrition/index.html">FoodNutrition</a> but with <a href="plus.html">nutrient</a> added to the existing value or inserted</p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-mass-portion/index.html">MassPortion</a><span class="token punctuation">.</span><a href="plus.html"><span class="token function">plus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="-mass-portion/index.html">MassPortion</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mass-portion/index.html">MassPortion</a></div><div class="brief "><p class="paragraph">Create a <a href="-mass-portion/index.html">MassPortion</a> whose <a href="-mass-portion/mass.html">MassPortion.mass</a> is equal to the sum of mass in <code class="lang-kotlin">this</code> and <a href="plus.html">other</a></p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-portion/index.html">Portion</a><span class="token punctuation">.</span><a href="plus.html"><span class="token function">plus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="-portion/index.html">Portion</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-portion/index.html">Portion</a></div><div class="brief "><p class="paragraph">Create a <a href="-portion/index.html">Portion</a> whose volume or mass is equal to the sum of <code class="lang-kotlin">this</code> and <a href="plus.html">other</a>. <code class="lang-kotlin">this</code> and <a href="plus.html">other</a> should both be defined in the same measurement type; specifically, both are <a href="-mass-portion/index.html">MassPortion</a> or both are <a href="-volume-portion/index.html">VolumePortion</a></p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-volume-portion/index.html">VolumePortion</a><span class="token punctuation">.</span><a href="plus.html"><span class="token function">plus</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="-volume-portion/index.html">VolumePortion</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-volume-portion/index.html">VolumePortion</a></div><div class="brief "><p class="paragraph">Create a <a href="-volume-portion/index.html">VolumePortion</a> with <a href="-volume-portion/volume.html">VolumePortion.volume</a> equal to the sum of volume in <code class="lang-kotlin">this</code> and <a href="plus.html">other</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1623582118%2FFunctions%2F1059972719" anchor-label="Portion" id="1623582118%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-portion.html"><span><span>Portion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1623582118%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-portion.html"><span class="token function">Portion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">mass<span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Mass///PointingToDeclaration/">Mass</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-portion/index.html">Portion</a></div><div class="brief "><p class="paragraph">Create a new <a href="-portion/index.html">Portion</a> with <a href="-portion.html">mass</a></p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-portion.html"><span class="token function">Portion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">volume<span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Volume///PointingToDeclaration/">Volume</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-portion/index.html">Portion</a></div><div class="brief "><p class="paragraph">Create a new <a href="-portion/index.html">Portion</a> with <a href="-portion.html">volume</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1016910647%2FFunctions%2F1059972719" anchor-label="scaleToPortion" id="1016910647%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="scale-to-portion.html"><span>scale</span><wbr><span>To</span><wbr><span><span>Portion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1016910647%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="scale-to-portion.html"><span class="token function">scaleToPortion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">newPortion<span class="token operator">: </span><a href="-portion/index.html">Portion</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-food-nutrition/index.html">FoodNutrition</a></div><div class="brief "><p class="paragraph">Create a <a href="-food-nutrition/index.html">FoodNutrition</a> with all properties scaled to make <code class="lang-kotlin">portion == newPortion</code></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1517569390%2FFunctions%2F1059972719" anchor-label="times" id="-1517569390%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="times.html"><span><span>times</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1517569390%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-mass-portion/index.html">MassPortion</a><span class="token punctuation">.</span><a href="times.html"><span class="token function">times</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">number<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/index.html">Number</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mass-portion/index.html">MassPortion</a></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-portion/index.html">Portion</a><span class="token punctuation">.</span><a href="times.html"><span class="token function">times</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">number<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/index.html">Number</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-portion/index.html">Portion</a></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-volume-portion/index.html">VolumePortion</a><span class="token punctuation">.</span><a href="times.html"><span class="token function">times</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">number<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/index.html">Number</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-volume-portion/index.html">VolumePortion</a></div><div class="brief "><p class="paragraph">Scales <code class="lang-kotlin">this</code> by <a href="times.html">number</a></p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/index.html">Number</a><span class="token punctuation">.</span><a href="times.html"><span class="token function">times</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">portion<span class="token operator">: </span><a href="-mass-portion/index.html">MassPortion</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mass-portion/index.html">MassPortion</a></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/index.html">Number</a><span class="token punctuation">.</span><a href="times.html"><span class="token function">times</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">portion<span class="token operator">: </span><a href="-portion/index.html">Portion</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-portion/index.html">Portion</a></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-number/index.html">Number</a><span class="token punctuation">.</span><a href="times.html"><span class="token function">times</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">portion<span class="token operator">: </span><a href="-volume-portion/index.html">VolumePortion</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-volume-portion/index.html">VolumePortion</a></div><div class="brief "><p class="paragraph">Scales <a href="times.html">portion</a> by <code class="lang-kotlin">this</code></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1811903275%2FFunctions%2F1059972719" anchor-label="unaryMinus" id="1811903275%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-togglable="EXTENSION_FUNCTION" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="unary-minus.html"><span>unary</span><wbr><span><span>Minus</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1811903275%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-food-nutrition/index.html">FoodNutrition</a><span class="token punctuation">.</span><a href="unary-minus.html"><span class="token function">unaryMinus</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-food-nutrition/index.html">FoodNutrition</a></div><div class="brief "><p class="paragraph">Negate <a href="-food-nutrition/portion.html">FoodNutrition.portion</a>, <a href="-food-nutrition/food-energy.html">FoodNutrition.foodEnergy</a>, and all <a href="-food-nutrition/nutrients.html">FoodNutrition.nutrients</a></p></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-mass-portion/index.html">MassPortion</a><span class="token punctuation">.</span><a href="unary-minus.html"><span class="token function">unaryMinus</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-mass-portion/index.html">MassPortion</a></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-portion/index.html">Portion</a><span class="token punctuation">.</span><a href="unary-minus.html"><span class="token function">unaryMinus</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-portion/index.html">Portion</a></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><a href="-volume-portion/index.html">VolumePortion</a><span class="token punctuation">.</span><a href="unary-minus.html"><span class="token function">unaryMinus</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-volume-portion/index.html">VolumePortion</a></div><div class="brief "><p class="paragraph">Negate <code class="lang-kotlin">this</code></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="754883118%2FFunctions%2F1059972719" anchor-label="VolumePortion" id="754883118%2FFunctions%2F1059972719" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain"></a>
+          <div class="table-row" data-filterable-current=":nutrition:nutrition:dokkaHtmlPartial/commonMain" data-filterable-set=":nutrition:nutrition:dokkaHtmlPartial/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-volume-portion.html"><span>Volume</span><wbr><span><span>Portion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="754883118%2FFunctions%2F1059972719"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":nutrition:nutrition:dokkaHtmlPartial/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-volume-portion.html"><span class="token function">VolumePortion</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">volume<span class="token operator">: </span><span data-unresolved-link="io.github.john.tuesday.measurement/Volume///PointingToDeclaration/">Volume</span><span class="token operator"> = </span>0.liters</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-volume-portion/index.html">VolumePortion</a></div><div class="brief "><p class="paragraph">Create a <a href="-volume-portion/index.html">VolumePortion</a> with <a href="-volume-portion.html">volume</a></p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,7 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:nutrition
+io.github.john.tuesday.nutrition
+module:nutrition-test
+io.github.john.tuesday.nutrition

@@ -1,7 +1,7 @@
 package io.github.john.tuesday.nutrition
 
 const val MavenGroupId = "io.github.john-tuesday"
-const val MavenVersion = "0.2.0-alpha01"
+const val MavenVersion = "0.2.0-alpha02"
 
 data class RepositoryInfo(
     val name: String,
