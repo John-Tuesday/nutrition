@@ -1,7 +1,6 @@
 dependencyResolutionManagement {
     repositories {
         mavenCentral()
-        google()
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/tuesday-org/*")
