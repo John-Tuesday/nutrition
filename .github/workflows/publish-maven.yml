@@ -1,0 +1,66 @@
+name: Publish to Maven Repository
+
+on:
+  workflow_call:
+    inputs:
+      github-packages:
+        type: boolean
+        default: true
+      sonatype:
+        type: boolean
+        default: true
+      strict-publish:
+        type: boolean
+        default: false
+    secrets:
+      OSSRH_USERNAME:
+        required: true
+      OSSRH_PASSWORD:
+        required: true
+      GPG_SIGNING_PASSWORD:
+        required: true
+      GPG_SECRET_KEY:
+        required: true
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
+
+    permissions:
+      contents: read
+      packages: write
+
+    env:
+      GPR_USERNAME: ${{ github.actor }}
+      GPR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+      OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+      GPG_SIGNING_PASSWORD: ${{ secrets.GPG_SIGNING_PASSWORD }}
+      GPG_SECRET_KEY: ${{ secrets.GPG_SECRET_KEY }}
+      TARGET_FILTER_INCLUDE: ${{ matrix.os == 'macos-latest' && '(macos.*)|(ios.*)|(watchos.*)|(tvos.*)' || '.*' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java '8'
+        uses: actions/setup-java@v3.13.0
+        with:
+          distribution: temurin
+          java-version: '8'
+
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v1.1.0
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2.10.0
+
+      - name: Publish to repos
+        shell: bash
+        if: ${{ inputs.github-packages || inputs.sonatype }}
+        continue-on-error: ${{ ! inputs.strict-publish }}
+        env:
+          CONTINUE: ${{ inputs.strict-publish && '' || '--continue' }}
+          TASK: ${{ (inputs.github-packages && inputs.sonatype) && 'publish' || (inputs.github-packages && 'publishAllPublicationsToGitHubPackagesRepository' || 'publishAllPublicationsToSonatypeStagingRepository') }}
+        run: ./gradlew "$TASK" "$CONTINUE"

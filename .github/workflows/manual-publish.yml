@@ -1,0 +1,30 @@
+name: Manual Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      github-packages:
+        description: 'Publish to GitHub Packages'
+        type: boolean
+        default: true
+      sonatype:
+        description: 'Publish to Sonatype'
+        type: boolean
+        default: true
+      strict-publish:
+        description: 'Fail when a Job fails or when a Gradle task fails'
+        type: boolean
+        default: false
+
+jobs:
+  publish:
+    permissions:
+      packages: write
+      contents: read
+
+    uses: ./.github/workflows/publish-maven.yml
+    secrets: inherit
+    with:
+      github-packages: ${{ inputs.github-packages }}
+      sonatype: ${{ inputs.sonatype }}
+      strict-publish: ${{ inputs.strict-publish }}
