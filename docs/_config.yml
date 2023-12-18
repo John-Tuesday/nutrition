@@ -31,9 +31,8 @@ github_username: John-Tuesday
 
 # Build settings
 # theme: minima
-remote_theme: pages-themes/tactile@v0.2.0
+theme: minima
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
 
 # Exclude from processing.
