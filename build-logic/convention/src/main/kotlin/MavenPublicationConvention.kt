@@ -1,10 +1,6 @@
 import io.github.john.tuesday.nutrition.NutritionRepo
-import io.github.john.tuesday.nutrition.johnTuesday
 import io.github.john.tuesday.plugins.MavenPublishAssistPlugin
-import io.github.john.tuesday.plugins.publishing.model.LicensePreset
-import io.github.john.tuesday.plugins.publishing.model.MavenRepository
-import io.github.john.tuesday.plugins.publishing.model.license
-import io.github.john.tuesday.plugins.publishing.model.maven
+import io.github.john.tuesday.plugins.helper.*
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.publish.PublishingExtension
@@ -23,14 +19,12 @@ class MavenPublicationConvention : Plugin<Project> {
 
             val publishing = extensions.getByType<PublishingExtension>()
             publishing.repositories {
-                maven(
-                    repo = MavenRepository.SonatypeStaging,
-                    providers = providers,
-                )
-                maven(
-                    repo = MavenRepository.GitHubPackage(owner = "john-tuesday", repository = "nutrition"),
-                    providers = providers,
-                )
+                maven {
+                    usePreset(SonatypeStaging, providers)
+                }
+                maven {
+                    usePreset(GitHubPackages(owner = "john-tuesday", repository = "nutrition"), providers)
+                }
             }
             publishing.publications.withType<MavenPublication>().configureEach {
                 pom {
