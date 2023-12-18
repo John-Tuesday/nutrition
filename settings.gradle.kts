@@ -5,7 +5,7 @@ pluginManagement {
         gradlePluginPortal()
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/john-tuesday/*")
+            url = uri("https://maven.pkg.github.com/tuesday-org/*")
             credentials {
                 username = providers
                     .gradleProperty("gpr.user")
